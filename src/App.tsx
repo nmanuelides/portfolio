@@ -19,7 +19,7 @@ function App() {
   const navigateToMTGPT = () => {
     fade();
     setTimeout(() => {
-      window.location.href = "http://www.mtgpricetutor.com.ar?from=portfolio";
+      window.location.href = "https://www.mtgpricetutor.com.ar?from=portfolio";
     }, 1000);
   };
 
