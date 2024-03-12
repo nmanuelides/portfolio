@@ -43,7 +43,7 @@ function App() {
               >
                 <button
                   className={leftThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
-                  onClick={fade}
+                  onClick={navigateToMTGPT}
                 >
                   GO TO
                 </button>
