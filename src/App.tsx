@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.scss";
 import "./mobile.scss";
 import { mtgPriceTutorDescription, runBeatDescription } from "./sitesDescriptions.js";
@@ -10,6 +9,20 @@ function App() {
   const [leftThumbnailHovered, setLeftThumbnailHovered] = useState(false);
   const [rightThumbnailHovered, setRightThumbnailHovered] = useState(false);
   const fade = () => setFadeToBlack(!fadeToBlack);
+  const navigateToRunBeat = () => {
+    fade();
+    setTimeout(() => {
+      window.location.href = "https://nmanuelides.github.io/runbeat/?from=portfolio";
+    }, 1000);
+  };
+
+  const navigateToMTGPT = () => {
+    fade();
+    setTimeout(() => {
+      window.location.href = "http://www.mtgpricetutor.com.ar?from=portfolio";
+    }, 1000);
+  };
+
   return (
     <div className="App">
       <div className="content">
@@ -54,7 +67,7 @@ function App() {
               >
                 <button
                   className={rightThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
-                  onClick={fade}
+                  onClick={navigateToRunBeat}
                 >
                   GO TO
                 </button>
