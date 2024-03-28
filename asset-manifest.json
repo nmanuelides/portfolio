@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "./static/css/main.e6858070.css",
-    "main.js": "./static/js/main.8e7ffd33.js",
+    "main.css": "./static/css/main.480cbb53.css",
+    "main.js": "./static/js/main.046d67ce.js",
     "static/js/453.acca0757.chunk.js": "./static/js/453.acca0757.chunk.js",
-    "static/media/dust2.png": "./static/media/dust2.e23da3e2e1ea5e7e254d.png",
     "static/media/runbeat-thumbnail.png": "./static/media/runbeat-thumbnail.098cff5b27cb9fbe83de.png",
     "static/media/mtgpt-thumbnail.png": "./static/media/mtgpt-thumbnail.4362c3e57f781be50dff.png",
     "static/media/TOMMYBoldOutline.otf": "./static/media/TOMMYBoldOutline.94e2ffd8482504217e22.otf",
     "static/media/TOMMYRegular.otf": "./static/media/TOMMYRegular.101be848d2d18e7296bc.otf",
     "static/media/TOMMYBold.otf": "./static/media/TOMMYBold.76e6daa1c9100e32f75e.otf",
+    "static/media/stars.png": "./static/media/stars.ba538f68557d82fcb31f.png",
+    "static/media/niki.png": "./static/media/niki.1e1747e9d6a18db5aa8c.png",
     "static/media/Skyer.otf": "./static/media/Skyer.706e807cc24ec67c80f0.otf",
     "index.html": "./index.html",
-    "main.e6858070.css.map": "./static/css/main.e6858070.css.map",
-    "main.8e7ffd33.js.map": "./static/js/main.8e7ffd33.js.map",
+    "main.480cbb53.css.map": "./static/css/main.480cbb53.css.map",
+    "main.046d67ce.js.map": "./static/js/main.046d67ce.js.map",
     "453.acca0757.chunk.js.map": "./static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6858070.css",
-    "static/js/main.8e7ffd33.js"
+    "static/css/main.480cbb53.css",
+    "static/js/main.046d67ce.js"
   ]
 }
