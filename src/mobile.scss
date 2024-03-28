@@ -1,73 +1,95 @@
 @import "./App.scss";
+
+@media (max-height: 1200px) {
+  .App {
+    .content {
+      .App-header {
+        .header-subtitle {
+          span {
+            margin-top: -1.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .App::after {
     opacity: 0.5;
     animation: moveDust 40s linear infinite;
   }
   .App::before {
-    filter: brightness(2.5)
+    filter: brightness(2.5);
   }
-  .App-header {
-    font-size: 3.6rem;
-    line-height: 3rem;
-    span {
-      display: block;
-      width: 100%;
-      position: relative;
-      left: -40%;
-      margin: 0;
-      padding: 0;
-      font-size: 1.6rem;
-      font-family: "Skyer";
-      color: $arrakis-sand;
-      margin-top: -0.6rem;
-      animation: subtitleMoveIn 1.2s ease-in-out forwards;
-      animation-delay: 2s;
-    }
-  }
-
-  .thumbnails-container {
-    flex-direction: column;
-    margin-top: 8rem;
-    margin-left: 0;
-    gap: 32px;
-
-    .thumbnail {
-      width: 300px;
-      height: 230px;
-      .left-thumbnail {
-        width: 92%;
-        height: 90%;
-      }
-
-      .right-thumbnail {
-        width: 92%;
-        height: 90%;
+.App {
+  .content {
+    .App-header {
+      font-size: 3.6rem;
+      line-height: 3rem;
+      .header-subtitle {
+        span {
+          display: block;
+          width: 100%;
+          position: relative;
+          left: -40%;
+          margin: 0;
+          padding: 0;
+          font-size: 1.6rem;
+          font-family: "Skyer";
+          color: $arrakis-sand;
+          animation: subtitleMoveIn 1.2s ease-in-out forwards;
+          animation-delay: 2s;
+        }
       }
     }
-  }
 
-  .thumbnail-title {
-    &__hidden {
-      font-family: "Skyer";
-      font-size: 1rem;
-      color: rgb(180, 144, 111);
-      position: relative;
-      bottom: -40px;
-      animation: moveIn 0.5s 3s ease-in-out forwards;
-      opacity: 0;
+    .thumbnails-container {
+      flex-direction: column;
+      margin-top: 8rem;
+      margin-left: 0;
+      gap: 32px;
+
+      .thumbnail {
+        width: 300px;
+        height: 230px;
+        .left-thumbnail {
+          width: 92%;
+          height: 90%;
+        }
+
+        .right-thumbnail {
+          width: 92%;
+          height: 90%;
+        }
+      }
+    }
+
+    .thumbnail-title {
+      &__hidden {
+        font-family: "Skyer";
+        font-size: 1rem;
+        color: rgb(180, 144, 111);
+        position: relative;
+        bottom: -40px;
+        animation: moveIn 0.5s 3s ease-in-out forwards;
+        opacity: 0;
+      }
+    }
+
+    .thumbnail-title__hidden::after {
+      content: "";
+      width: 1px;
+      height: 18px;
+      background: rgb(180, 144, 111);
+      position: absolute;
+      bottom: -85%;
+      left: 10%;
     }
   }
 
-  .thumbnail-title__hidden::after {
-    content: "";
-    width: 1px;
-    height: 18px;
-    background: rgb(180, 144, 111);
-    position: absolute;
-    bottom: -85%;
-    left: 10%;
-  }
+}
+
   @keyframes moveIn {
     100% {
       opacity: 1;

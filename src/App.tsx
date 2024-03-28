@@ -3,6 +3,8 @@ import "./App.scss";
 import "./mobile.scss";
 import { mtgPriceTutorDescription, runBeatDescription } from "./sitesDescriptions.js";
 import { useIsMobile } from "./hooks/useIsMobile";
+import niki from "./assets/niki.png";
+import Spheres from "./components/spheres/src/Spheres";
 
 function App() {
   const [fadeToBlack, setFadeToBlack] = useState(false);
@@ -25,13 +27,16 @@ function App() {
 
   return (
     <div className="App">
+      <Spheres/>
       <div className="content">
         <header className="App-header">
-          <p>NIKI</p>
-          <p>MANUELIDES</p>
-          <span>portfolio</span>
+          <img src={niki} className="niki"/>
+          <div className="header-subtitle">
+            <p>MANUELIDES</p>
+            <span>portfolio</span>
+          </div>
         </header>
-        <div className="title">My React Projects</div>
+        <div className="title">My React.js Projects</div>
         <div className="thumbnails-container">
           <div className="thumbnail-container">
             <p className={leftThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>MTG Price Tutor</p>
