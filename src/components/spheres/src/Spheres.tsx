@@ -1,0 +1,16 @@
+import '../styles/desktop.scss';
+
+const Spheres = () => {
+  return (
+    <div className="spheres-container">
+      <div className="sphere1" />
+      <div className="sphere2" />
+      <div className="sphere3" />
+      <div className="sphere4" />
+      <div className="sphere5" />
+      <div className="sphere6" />
+    </div>
+  );
+};
+
+export default Spheres;
