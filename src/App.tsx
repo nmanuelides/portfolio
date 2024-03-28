@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.scss";
 import "./mobile.scss";
-import { mtgPriceTutorDescription, runBeatDescription } from "./sitesDescriptions.js";
+import { mtgPriceTutorDescription, runBeatDescription, aboutMyself } from "./sitesDescriptions.js";
 import { useIsMobile } from "./hooks/useIsMobile";
 import niki from "./assets/niki.png";
 import Spheres from "./components/spheres/src/Spheres";
@@ -27,16 +27,21 @@ function App() {
 
   return (
     <div className="App">
-      <Spheres/>
+      <Spheres />
       <div className="content">
         <header className="App-header">
-          <img src={niki} className="niki"/>
+          <img src={niki} className="niki" />
           <div className="header-subtitle">
             <p>MANUELIDES</p>
             <span>portfolio</span>
           </div>
         </header>
-        <div className="title">My React.js Projects</div>
+        <div className="about-container">
+          <b className="title">About Myself</b>
+          <div className="about-container__text">
+            <b>{aboutMyself}</b>
+          </div>
+        </div>
         <div className="thumbnails-container">
           <div className="thumbnail-container">
             <p className={leftThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>MTG Price Tutor</p>

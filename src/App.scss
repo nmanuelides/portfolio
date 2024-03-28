@@ -1,4 +1,4 @@
-@import './colors.scss';
+@import "./colors.scss";
 
 :root {
   --svw: 1vw;
@@ -38,14 +38,33 @@
   .title {
     display: flex;
     align-items: center;
-    margin-left: 32px;
-    margin-top: 64px;
+    margin-left: 24px;
+    margin-top: 24px;
     color: $arrakis-sand;
     font-size: calc(10% + 1.6rem);
     font-size: 1.6rem;
     font-family: "Skyer";
   }
 
+  .about-container {
+    height: 20%;
+    width: 100svw;
+    padding: 0;
+    margin-left: 32px;
+    border-radius: 48px 0 0 48px;
+    background-color: rgba($darker-grape, 0.35);
+    box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.25) inset;
+    &__text {
+      width: 60%;
+      background-image: linear-gradient(130deg, $arrakis-sand 30%, $light-grape 40%, $arrakis-sand 50%);
+      background-size: 200% 300%;
+      background-clip: text;
+      font-family: "TommyRegular";
+      color: transparent;
+      animation: descriptionTextBgFX 1.5s ease-in-out forwards;
+      padding: 24px;
+    }
+  }
   .fade-to-black_off {
     position: absolute;
     height: 100svh;
@@ -287,7 +306,7 @@
           &__visible:hover {
             border: 1px solid $light-grape;
             filter: brightness(1.5);
-            box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.30);
+            box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.3);
           }
         }
         .left-thumbnail {
@@ -300,7 +319,7 @@
           overflow: hidden;
           background-position: center center;
           transition: all 0.3s ease-in-out;
-          box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.70);
+          box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.7);
           opacity: 0.6;
         }
 
