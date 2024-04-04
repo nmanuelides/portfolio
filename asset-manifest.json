@@ -1,18 +1,24 @@
 {
   "files": {
-    "main.css": "./static/css/main.4246de53.css",
-    "main.js": "./static/js/main.702f1dfe.js",
+    "main.css": "./static/css/main.32f23246.css",
+    "main.js": "./static/js/main.79570369.js",
     "static/js/453.acca0757.chunk.js": "./static/js/453.acca0757.chunk.js",
     "static/media/runbeat-thumbnail.png": "./static/media/runbeat-thumbnail.098cff5b27cb9fbe83de.png",
     "static/media/mtgpt-thumbnail.png": "./static/media/mtgpt-thumbnail.4362c3e57f781be50dff.png",
     "static/media/reactjs-logo.png": "./static/media/reactjs-logo.6bcffb56bd0efaa47767.png",
+    "static/media/android-logo.png": "./static/media/android-logo.21bf8bee465408512084.png",
     "static/media/TOMMYBoldOutline.otf": "./static/media/TOMMYBoldOutline.94e2ffd8482504217e22.otf",
     "static/media/TOMMYRegular.otf": "./static/media/TOMMYRegular.101be848d2d18e7296bc.otf",
     "static/media/TOMMYBold.otf": "./static/media/TOMMYBold.76e6daa1c9100e32f75e.otf",
     "static/media/TOMMYLight.otf": "./static/media/TOMMYLight.baa9639fea2a3259ba0b.otf",
     "static/media/stars.png": "./static/media/stars.ba538f68557d82fcb31f.png",
+    "static/media/git-logo.png": "./static/media/git-logo.8322c082f223fd807d36.png",
     "static/media/sass-logo.png": "./static/media/sass-logo.9a248631f1b9fa3b89a5.png",
+    "static/media/uiuxdesign-logo.jpg": "./static/media/uiuxdesign-logo.fc791a332f6a17767d5e.jpg",
+    "static/media/agile-logo.png": "./static/media/agile-logo.2e144fd8f9d1624212b3.png",
     "static/media/java-logo.png": "./static/media/java-logo.8ebed67c38cc9405a4cf.png",
+    "static/media/graphql-logo.png": "./static/media/graphql-logo.85923a97691e862396c8.png",
+    "static/media/figma-logo.webp": "./static/media/figma-logo.bd3cd2143b606c0a5fba.webp",
     "static/media/jest-logo.webp": "./static/media/jest-logo.bb97d93734ca894f39ff.webp",
     "static/media/html-logo.png": "./static/media/html-logo.6ea4d06d4df1aade1da4.png",
     "static/media/niki.png": "./static/media/niki.1e1747e9d6a18db5aa8c.png",
@@ -22,12 +28,12 @@
     "static/media/storybook-logo.svg": "./static/media/storybook-logo.c0643a65a8a1b060745974cbca39e478.svg",
     "static/media/ts-logo.svg": "./static/media/ts-logo.9ad81d2e09b9cd2265cdb1e55d83a709.svg",
     "index.html": "./index.html",
-    "main.4246de53.css.map": "./static/css/main.4246de53.css.map",
-    "main.702f1dfe.js.map": "./static/js/main.702f1dfe.js.map",
+    "main.32f23246.css.map": "./static/css/main.32f23246.css.map",
+    "main.79570369.js.map": "./static/js/main.79570369.js.map",
     "453.acca0757.chunk.js.map": "./static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4246de53.css",
-    "static/js/main.702f1dfe.js"
+    "static/css/main.32f23246.css",
+    "static/js/main.79570369.js"
   ]
 }
