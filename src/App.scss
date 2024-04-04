@@ -37,7 +37,7 @@
   display: flex;
   flex-direction: column;
   height: 100svh;
-  width: 98svw;
+  width: 100svw;
   background-size: auto;
   position: relative;
   overflow: hidden;
@@ -130,14 +130,15 @@
         &__title {
           display: flex;
           align-items: center;
+          margin-bottom: 16px;
           color: $arrakis-sand;
           font-size: calc(10% + 1.6rem);
           font-size: 1.6rem;
-          font-family: "Skyer";
+          font-family: "TommyLight";
         }
   
         &__text {
-          width: 60%;
+          width: 95%;
           background-image: linear-gradient(130deg, $arrakis-sand 30%, $light-grape 40%, $arrakis-sand 50%);
           background-size: 200% 300%;
           background-clip: text;
@@ -372,7 +373,7 @@
           color: $arrakis-sand;
           font-size: calc(10% + 1.6rem);
           font-size: 1.6rem;
-          font-family: "Skyer";
+          font-family: "TommyLight";
         }
 
         &__languages {
@@ -389,6 +390,9 @@
           grid-template-rows: auto;
           justify-content: center;
           gap: 24px
+        }
+        &__skills > :last-child {
+          grid-column: 2;
         }
       }
       .skills-container:nth-child(2) {

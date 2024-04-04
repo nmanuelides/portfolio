@@ -12,7 +12,7 @@ import typescriptLogo from "./assets/ts-logo.svg";
 import agileLogo from "./assets/agile-logo.png";
 import androidLogo from "./assets/android-logo.png";
 import cssLogo from "./assets/css-logo.png";
-import figmaLogo from "./assets/figma-logo.png";
+import figmaLogo from "./assets/figma-logo.webp";
 import gitLogo from "./assets/git-logo.png";
 import graphqlLogo from "./assets/graphql-logo.png";
 import htmlLogo from "./assets/html-logo.png";
@@ -129,13 +129,13 @@ function App() {
               <LogoTile image={sassLogo} title="Sass" size="small" />
               <LogoTile image={storybookLogo} title="Storybook" size="small" />
               <LogoTile image={jestLogo} title="Jest" size="small" />
-              <LogoTile image={jestLogo} title="Jest" size="small" />
-              <LogoTile image={jestLogo} title="Jest" size="small" />
-              <LogoTile image={jestLogo} title="Jest" size="small" />
-              <LogoTile image={jestLogo} title="Jest" size="small" />
-              <LogoTile image={jestLogo} title="Jest" size="small" />
-              <LogoTile image={jestLogo} title="Jest" size="small" />
-              <LogoTile image={jestLogo} title="Jest" size="small" />
+              <LogoTile image={figmaLogo} title="Figma" size="small" />
+              <LogoTile image={gitLogo} title="Git" size="small" />
+              <LogoTile image={androidLogo} title="Android" size="small" />
+              <LogoTile image={graphqlLogo} title="GraphQL" size="small" />
+              <LogoTile image={photoshopLogo} title="Photoshop" size="small" />
+              <LogoTile image={uiuxdesignLogo} title="UI/UX Design" size="small" />
+              <LogoTile image={agileLogo} title="Agile Methdology" size="small" />
             </div>
           </div>
         </section>
