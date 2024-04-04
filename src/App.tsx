@@ -5,6 +5,23 @@ import { mtgPriceTutorDescription, runBeatDescription, aboutMyself } from "./sit
 import { useIsMobile } from "./hooks/useIsMobile";
 import niki from "./assets/niki.png";
 import Spheres from "./components/spheres/src/Spheres";
+import LogoTile from "./components/logo-tile/src/LogoTile";
+import javaLogo from "./assets/java-logo.png";
+import javascriptLogo from "./assets/js-logo.png";
+import typescriptLogo from "./assets/ts-logo.svg";
+import agileLogo from "./assets/agile-logo.png";
+import androidLogo from "./assets/android-logo.png";
+import cssLogo from "./assets/css-logo.png";
+import figmaLogo from "./assets/figma-logo.png";
+import gitLogo from "./assets/git-logo.png";
+import graphqlLogo from "./assets/graphql-logo.png";
+import htmlLogo from "./assets/html-logo.png";
+import jestLogo from "./assets/jest-logo.webp";
+import photoshopLogo from "./assets/photoshop-logo.png";
+import reactjsLogo from "./assets/reactjs-logo.png";
+import sassLogo from "./assets/sass-logo.png";
+import storybookLogo from "./assets/storybook-logo.svg";
+import uiuxdesignLogo from "./assets/uiuxdesign-logo.jpg";
 
 function App() {
   const [fadeToBlack, setFadeToBlack] = useState(false);
@@ -28,71 +45,101 @@ function App() {
   return (
     <div className="App">
       <Spheres />
-      <div className="content">
-        <header className="App-header">
-          <img src={niki} className="niki" />
-          <div className="header-subtitle">
-            <p>MANUELIDES</p>
-            <span>portfolio</span>
-          </div>
-        </header>
-        <div className="about-container">
-          <b className="title">About Myself</b>
-          <div className="about-container__text">
-            <b>{aboutMyself}</b>
-          </div>
+      <header className="App-header">
+        <img src={niki} className="niki" />
+        <div className="header-subtitle">
+          <p>MANUELIDES</p>
+          <span>portfolio</span>
         </div>
-        <div className="thumbnails-container">
-          <div className="thumbnail-container">
-            <p className={leftThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>MTG Price Tutor</p>
-            <div className="thumbnail">
-              <div
-                className="left-thumbnail"
-                onMouseEnter={() => setLeftThumbnailHovered(true)}
-                onMouseLeave={() => setLeftThumbnailHovered(false)}
-              >
-                <button
-                  className={leftThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
-                  onClick={navigateToMTGPT}
+      </header>
+      <section className="main-content">
+        <section className="left-column">
+          <div className="about-container">
+            <b className="about-container__title">About Myself</b>
+            <div className="about-container__text">
+              <b>{aboutMyself}</b>
+            </div>
+          </div>
+          <div className="thumbnails-container">
+            <div className="thumbnail-container">
+              <p className={leftThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>MTG Price Tutor</p>
+              <div className="thumbnail">
+                <div
+                  className="left-thumbnail"
+                  onMouseEnter={() => setLeftThumbnailHovered(true)}
+                  onMouseLeave={() => setLeftThumbnailHovered(false)}
                 >
-                  GO TO
-                </button>
+                  <button
+                    className={leftThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
+                    onClick={navigateToMTGPT}
+                  >
+                    GO TO
+                  </button>
+                </div>
+              </div>
+              <div
+                className={
+                  leftThumbnailHovered ? "left-info-card__container-visible" : "left-info-card__container-hidden"
+                }
+              >
+                <p className="description-text">{mtgPriceTutorDescription}</p>
               </div>
             </div>
-            <div
-              className={
-                leftThumbnailHovered ? "left-info-card__container-visible" : "left-info-card__container-hidden"
-              }
-            >
-              <p className="description-text">{mtgPriceTutorDescription}</p>
-            </div>
-          </div>
-          <div className="thumbnail-container">
-            <p className={rightThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>RUNBEAT</p>
-            <div className="thumbnail">
-              <div
-                className="right-thumbnail"
-                onMouseEnter={() => setRightThumbnailHovered(true)}
-                onMouseLeave={() => setRightThumbnailHovered(false)}
-              >
-                <button
-                  className={rightThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
-                  onClick={navigateToRunBeat}
+            <div className="thumbnail-container">
+              <p className={rightThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>RUNBEAT</p>
+              <div className="thumbnail">
+                <div
+                  className="right-thumbnail"
+                  onMouseEnter={() => setRightThumbnailHovered(true)}
+                  onMouseLeave={() => setRightThumbnailHovered(false)}
                 >
-                  GO TO
-                </button>
+                  <button
+                    className={rightThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
+                    onClick={navigateToRunBeat}
+                  >
+                    GO TO
+                  </button>
+                </div>
+              </div>
+              <div
+                className={
+                  rightThumbnailHovered ? "right-info-card__container-visible" : "right-info-card__container-hidden"
+                }
+              >
+                <p className="description-text">{runBeatDescription}</p>
               </div>
             </div>
-            <div
-              className={
-                rightThumbnailHovered ? "right-info-card__container-visible" : "right-info-card__container-hidden"
-              }
-            >
-              <p className="description-text">{runBeatDescription}</p>
+          </div>
+        </section>
+        <section className="right-column">
+          <div className="skills-container">
+            <b className="skills-container__title">Programming Languages</b>
+            <div className="skills-container__languages">
+              <LogoTile image={javaLogo} title="Java" size="medium" />
+              <LogoTile image={javascriptLogo} title="Javascript" size="medium" />
+              <LogoTile image={typescriptLogo} title="Typescript" size="medium" />
             </div>
           </div>
-        </div>
-      </div>
+          <div className="skills-container">
+            <b className="skills-container__title">Skills</b>
+            <div className="skills-container__skills">
+              <LogoTile image={reactjsLogo} title="React JS" size="small" />
+              <LogoTile image={htmlLogo} title="HTML" size="small" />
+              <LogoTile image={cssLogo} title="CSS" size="small" />
+              <LogoTile image={sassLogo} title="Sass" size="small" />
+              <LogoTile image={storybookLogo} title="Storybook" size="small" />
+              <LogoTile image={jestLogo} title="Jest" size="small" />
+              <LogoTile image={jestLogo} title="Jest" size="small" />
+              <LogoTile image={jestLogo} title="Jest" size="small" />
+              <LogoTile image={jestLogo} title="Jest" size="small" />
+              <LogoTile image={jestLogo} title="Jest" size="small" />
+              <LogoTile image={jestLogo} title="Jest" size="small" />
+              <LogoTile image={jestLogo} title="Jest" size="small" />
+              <LogoTile image={jestLogo} title="Jest" size="small" />
+            </div>
+          </div>
+        </section>
+      </section>
       <div className={!fadeToBlack ? "fade-to-black_off" : "fade-to-black__on"} onClick={fade} />
       <div className={!fadeToBlack ? "blur__off" : "blur__on"} />
     </div>

@@ -71,15 +71,15 @@ $spheres-speed: 20s;
     }
 
     .sphere5 {
-      height: 80%;
-      width: 70%;
+      height: 70%;
+      width: 60%;
       border-radius: 100%;
       background: $space-marine-blue;
       position: absolute;
       top: 5%;
       left: 85%;
       filter: blur(200px);
-      animation: sphere4Orbit $spheres-speed linear alternate infinite;
+      animation: sphere5Orbit $spheres-speed linear alternate infinite;
     }
 
     @keyframes sphere5Orbit {
