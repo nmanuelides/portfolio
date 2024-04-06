@@ -116,6 +116,8 @@
     height: 100svh;
 
     .left-column {
+      display: flex;
+      flex-direction: column;
       width: 65%;
       // background: rgba(red, 0.5);
       .about-container {
@@ -148,7 +150,13 @@
           animation: descriptionTextBgFX 1.5s ease-in-out forwards;
         }
       }
-  
+      .my-projects-title {
+        align-self: center;
+        margin-top: 48px;
+        color: $arrakis-sand;
+        font-family: "TommyLight";
+        font-size: 1.6rem;
+      }
       .thumbnails-container {
         display: flex;
         justify-content: flex-start;
@@ -287,6 +295,7 @@
           .left-thumbnail {
             width: 450px;
             height: 300px;
+            border: 1px solid #bb1cff;
             border-radius: 24px;
             position: relative;
             background-image: url("./assets/mtgpt-thumbnail.png");
@@ -323,6 +332,7 @@
             width: 450px;
             height: 300px;
             position: relative;
+            border: 1px solid #bb1cff;
             border-radius: 24px;
             overflow: hidden;
             background-image: url("./assets/runbeat-thumbnail.png");

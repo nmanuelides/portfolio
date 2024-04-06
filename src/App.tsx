@@ -60,6 +60,7 @@ function App() {
               <b>{aboutMyself}</b>
             </div>
           </div>
+          <b className="my-projects-title">My React Projects</b>
           <div className="thumbnails-container">
             <div className="thumbnail-container">
               <p className={leftThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>MTG Price Tutor</p>
