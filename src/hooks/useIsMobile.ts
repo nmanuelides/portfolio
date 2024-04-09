@@ -7,22 +7,21 @@ export function useIsMobile(): boolean {
   const mobileQuery = "(max-width: 767px)";
 
   // Updates the device type based on the media query
-  function useIsMobile() {
+  function updateIsMobile() {
     const isMobile = window.matchMedia(mobileQuery).matches;
-
     setIsMobile(isMobile);
   }
 
   // Run the function once on mount and whenever the window size changes
   useEffect(() => {
-    useIsMobile();
+    updateIsMobile();
 
     // Event listener for the window resize event
-    window.addEventListener("resize", useIsMobile);
+    window.addEventListener("resize", updateIsMobile);
 
     // Cleanup function to remove the event listener
     return () => {
-      window.removeEventListener("resize", useIsMobile);
+      window.removeEventListener("resize", updateIsMobile);
     };
   }, []);
 

@@ -1,105 +1,132 @@
-@import '../../../colors.scss';
+@import "../../../colors.scss";
 $spheres-speed: 20s;
 
 .spheres-container {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: $darker-grape;
+  z-index: -2;
+  filter: blur(100px);
+  overflow: hidden;
+
+  .sphere1 {
+    height: 65%;
+    width: 55%;
+    border-radius: 100%;
+    background: $light-grape;
     position: absolute;
-    background: $darker-grape;
-    z-index: -2;
-
-    .sphere1 {
-      height: 65%;
-      width: 55%;
-      border-radius: 100%;
-      background: $light-grape;
-      position: absolute;
-      top: -20%;
-      left: -20%;
-      filter: blur(200px);
-      animation: sphere4Orbit $spheres-speed linear alternate infinite;
-    }
-
-    @keyframes sphere1Orbit {
-      100% {top: 40%; left:40%; transform: rotate(360deg); transform-origin: -50% 50%;}
-    }
-    .sphere2 {
-      height: 80%;
-      width: 70%;
-      border-radius: 100%;
-      background: $dark-grape;
-      position: absolute;
-      bottom: -20%;
-      left: -40%;
-      filter: blur(200px);
-      animation: sphere4Orbit $spheres-speed linear alternate infinite;
-    }
-
-    @keyframes sphere2Orbit {
-      100% {top: 40%; left:40%; transform: rotate(360deg); transform-origin: -20% 10%;}
-    }
-    .sphere3 {
-      height: 70%;
-      width: 60%;
-      border-radius: 100%;
-      background: $space-marine-blue;
-      position: absolute;
-      top: 8%;
-      left: -55%;
-      filter: blur(200px);
-      animation: sphere4Orbit $spheres-speed linear alternate infinite;
-    }
-
-    @keyframes sphere3Orbit {
-      100% {top: 10%; left:80%; transform: rotate(360deg); transform-origin: 10% -50%;}
-    }
-
-    .sphere4 {
-      height: 70%;
-      width: 60%;
-      border-radius: 100%;
-      background: $sun-light;
-      position: absolute;
-      top: -40%;
-      left: 30%;
-      filter: blur(200px);
-      animation: sphere4Orbit $spheres-speed linear infinite;
-    }
-    
-    @keyframes sphere4Orbit {
-      100% {transform: rotate(360deg); transform-origin: right;}
-    }
-
-    .sphere5 {
-      height: 70%;
-      width: 60%;
-      border-radius: 100%;
-      background: $space-marine-blue;
-      position: absolute;
-      top: 5%;
-      left: 85%;
-      filter: blur(200px);
-      animation: sphere5Orbit $spheres-speed linear alternate infinite;
-    }
-
-    @keyframes sphere5Orbit {
-      100% {top: 10%; left:-30%; transform: rotate(360deg); transform-origin: -15% -55%;}
-    }
-
-    .sphere6 {
-      height: 50%;
-      width: 40%;
-      border-radius: 100%;
-      background: $peach;
-      position: absolute;
-      top: -30%;
-      left: 15%;
-      filter: blur(200px);
-      animation: sphere4Orbit $spheres-speed linear alternate infinite;
-    }
-    
-    @keyframes sphere6Orbit {
-      100% {top: 5%; left:30%; transform: rotate(360deg); transform-origin: 15% 45%;}
-    }
-
+    top: -20%;
+    left: -20%;
+    animation: sphere4Orbit $spheres-speed ease-in-out alternate infinite;
   }
+
+  @keyframes sphere1Orbit {
+    100% {
+      top: 40%;
+      left: 40%;
+      transform: rotate(360deg);
+      transform-origin: -50% 50%;
+    }
+  }
+  .sphere2 {
+    height: 80%;
+    width: 70%;
+    border-radius: 100%;
+    background: $dark-grape;
+    position: absolute;
+    bottom: -20%;
+    left: -40%;
+    animation: sphere2Orbit $spheres-speed ease-in-out alternate infinite;
+  }
+
+  @keyframes sphere2Orbit {
+    100% {
+      top: 40%;
+      left: 40%;
+      transform: rotate(360deg);
+      transform-origin: -20% 10%;
+    }
+  }
+  .sphere3 {
+    height: 70%;
+    width: 60%;
+    border-radius: 100%;
+    background: $space-marine-blue;
+    position: absolute;
+    top: 8%;
+    left: -55%;
+    animation: sphere4Orbit $spheres-speed ease-in-out alternate infinite;
+  }
+
+  @keyframes sphere3Orbit {
+    100% {
+      top: 10%;
+      left: 80%;
+      transform: rotate(360deg);
+      transform-origin: 10% -50%;
+    }
+  }
+
+  .sphere4 {
+    height: 70%;
+    width: 60%;
+    border-radius: 100%;
+    background: $sun-light;
+    position: absolute;
+    top: -40%;
+    left: 30%;
+    animation: sphere4Orbit $spheres-speed ease-in-out infinite;
+  }
+
+  @keyframes sphere4Orbit {
+    100% {
+      transform: rotate(360deg);
+      transform-origin: right;
+    }
+  }
+
+  .sphere5 {
+    height: 70%;
+    width: 60%;
+    border-radius: 100%;
+    background: $space-marine-blue;
+    position: absolute;
+    top: 5%;
+    left: 85%;
+    animation: sphere5Orbit $spheres-speed ease-in-out alternate infinite;
+  }
+
+  @keyframes sphere5Orbit {
+    100% {
+      top: 10%;
+      left: -30%;
+      transform: rotate(360deg);
+      transform-origin: -15% -55%;
+    }
+  }
+
+  .sphere6 {
+    height: 50%;
+    width: 40%;
+    border-radius: 100%;
+    background: $peach;
+    position: absolute;
+    top: -30%;
+    left: 15%;
+    animation: sphere4Orbit $spheres-speed ease-in-out alternate infinite;
+  }
+
+  @keyframes sphere6Orbit {
+    100% {
+      top: 5%;
+      left: 30%;
+      transform: rotate(360deg);
+      transform-origin: 15% 45%;
+    }
+  }
+}
+
+.spheres-container-mobile {
+  @extend .spheres-container;
+}

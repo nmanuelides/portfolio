@@ -48,8 +48,8 @@ function App() {
       <header className="App-header">
         <img src={niki} className="niki" />
         <div className="header-subtitle">
-          <p>MANUELIDES</p>
-          <span>portfolio</span>
+          <p className="header-subtitle__manuelides">MANUELIDES</p>
+          <p className="header-subtitle__portfolio">portfolio</p>
         </div>
       </header>
       <section className="main-content">
@@ -64,19 +64,17 @@ function App() {
           <div className="thumbnails-container">
             <div className="thumbnail-container">
               <p className={leftThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>MTG Price Tutor</p>
-              <div className="thumbnail">
-                <div
-                  className="left-thumbnail"
-                  onMouseEnter={() => setLeftThumbnailHovered(true)}
-                  onMouseLeave={() => setLeftThumbnailHovered(false)}
+              <div
+                className="thumbnail left"
+                onMouseEnter={() => setLeftThumbnailHovered(true)}
+                onMouseLeave={() => setLeftThumbnailHovered(false)}
+              >
+                <button
+                  className={leftThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
+                  onClick={navigateToMTGPT}
                 >
-                  <button
-                    className={leftThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
-                    onClick={navigateToMTGPT}
-                  >
-                    GO TO
-                  </button>
-                </div>
+                  GO TO
+                </button>
               </div>
               <div
                 className={
@@ -87,20 +85,18 @@ function App() {
               </div>
             </div>
             <div className="thumbnail-container">
-              <p className={rightThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>RUNBEAT</p>
-              <div className="thumbnail">
-                <div
-                  className="right-thumbnail"
-                  onMouseEnter={() => setRightThumbnailHovered(true)}
-                  onMouseLeave={() => setRightThumbnailHovered(false)}
+              <p className={rightThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>RUNBEAT (WiP)</p>
+              <div
+                className="thumbnail right"
+                onMouseEnter={() => setRightThumbnailHovered(true)}
+                onMouseLeave={() => setRightThumbnailHovered(false)}
+              >
+                <button
+                  className={rightThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
+                  onClick={navigateToRunBeat}
                 >
-                  <button
-                    className={rightThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
-                    onClick={navigateToRunBeat}
-                  >
-                    GO TO
-                  </button>
-                </div>
+                  GO TO
+                </button>
               </div>
               <div
                 className={
