@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.0ec4abe2.css",
-    "main.js": "./static/js/main.cc7a6fca.js",
+    "main.css": "./static/css/main.4192ce77.css",
+    "main.js": "./static/js/main.1f6224ef.js",
     "static/js/453.acca0757.chunk.js": "./static/js/453.acca0757.chunk.js",
     "static/media/runbeat-thumbnail.png": "./static/media/runbeat-thumbnail.098cff5b27cb9fbe83de.png",
     "static/media/mtgpt-thumbnail.png": "./static/media/mtgpt-thumbnail.4362c3e57f781be50dff.png",
@@ -15,25 +15,25 @@
     "static/media/git-logo.png": "./static/media/git-logo.8322c082f223fd807d36.png",
     "static/media/sass-logo.png": "./static/media/sass-logo.9a248631f1b9fa3b89a5.png",
     "static/media/uiuxdesign-logo.jpg": "./static/media/uiuxdesign-logo.fc791a332f6a17767d5e.jpg",
+    "static/media/java-logo.png": "./static/media/java-logo.a11badbb98fce559b836.png",
     "static/media/agile-logo.png": "./static/media/agile-logo.2e144fd8f9d1624212b3.png",
-    "static/media/java-logo.png": "./static/media/java-logo.8ebed67c38cc9405a4cf.png",
     "static/media/graphql-logo.png": "./static/media/graphql-logo.85923a97691e862396c8.png",
     "static/media/figma-logo.webp": "./static/media/figma-logo.bd3cd2143b606c0a5fba.webp",
+    "static/media/js-logo.png": "./static/media/js-logo.368e3ac62321e0edcf0a.png",
     "static/media/jest-logo.webp": "./static/media/jest-logo.bb97d93734ca894f39ff.webp",
     "static/media/html-logo.png": "./static/media/html-logo.6ea4d06d4df1aade1da4.png",
     "static/media/niki.png": "./static/media/niki.1e1747e9d6a18db5aa8c.png",
     "static/media/css-logo.png": "./static/media/css-logo.6818c996ee4717a67a19.png",
-    "static/media/js-logo.png": "./static/media/js-logo.266bd9fb2663dcc057b4.png",
     "static/media/Skyer.otf": "./static/media/Skyer.706e807cc24ec67c80f0.otf",
     "static/media/storybook-logo.svg": "./static/media/storybook-logo.c0643a65a8a1b060745974cbca39e478.svg",
     "static/media/ts-logo.svg": "./static/media/ts-logo.9ad81d2e09b9cd2265cdb1e55d83a709.svg",
     "index.html": "./index.html",
-    "main.0ec4abe2.css.map": "./static/css/main.0ec4abe2.css.map",
-    "main.cc7a6fca.js.map": "./static/js/main.cc7a6fca.js.map",
+    "main.4192ce77.css.map": "./static/css/main.4192ce77.css.map",
+    "main.1f6224ef.js.map": "./static/js/main.1f6224ef.js.map",
     "453.acca0757.chunk.js.map": "./static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0ec4abe2.css",
-    "static/js/main.cc7a6fca.js"
+    "static/css/main.4192ce77.css",
+    "static/js/main.1f6224ef.js"
   ]
 }
