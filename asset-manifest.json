@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "./static/css/main.d697dc5f.css",
+    "main.css": "./static/css/main.9f4ac0c2.css",
     "main.js": "./static/js/main.8f77cf55.js",
     "static/js/453.acca0757.chunk.js": "./static/js/453.acca0757.chunk.js",
     "static/media/runbeat-thumbnail.png": "./static/media/runbeat-thumbnail.098cff5b27cb9fbe83de.png",
@@ -28,12 +28,12 @@
     "static/media/storybook-logo.svg": "./static/media/storybook-logo.c0643a65a8a1b060745974cbca39e478.svg",
     "static/media/ts-logo.svg": "./static/media/ts-logo.9ad81d2e09b9cd2265cdb1e55d83a709.svg",
     "index.html": "./index.html",
-    "main.d697dc5f.css.map": "./static/css/main.d697dc5f.css.map",
+    "main.9f4ac0c2.css.map": "./static/css/main.9f4ac0c2.css.map",
     "main.8f77cf55.js.map": "./static/js/main.8f77cf55.js.map",
     "453.acca0757.chunk.js.map": "./static/js/453.acca0757.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d697dc5f.css",
+    "static/css/main.9f4ac0c2.css",
     "static/js/main.8f77cf55.js"
   ]
 }
