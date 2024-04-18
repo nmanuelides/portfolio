@@ -44,6 +44,14 @@ function App() {
     }, 1000);
   };
 
+  const onLeftThumbnailHoveredHandler = () => {
+    setLeftThumbnailHovered(!leftThumbnailHovered);
+  };
+
+  const onRightThumbnailHoveredHandler = () => {
+    setRightThumbnailHovered(!rightThumbnailHovered);
+  };
+
   return (
     <div className="App">
       <Spheres />
@@ -64,12 +72,29 @@ function App() {
           </div>
           <b className="my-projects-title">My React Projects</b>
           <div className="thumbnails-container">
-            <div className={leftThumbnailHovered && isMobile ? "thumbnail-container__big-mode" : "thumbnail-container"}>
+            {isMobile && (leftThumbnailHovered || rightThumbnailHovered) && (
+              <button
+                className="close-button"
+                onClick={() => {
+                  setLeftThumbnailHovered(false);
+                  setRightThumbnailHovered(false);
+                }}
+              >
+                x
+              </button>
+            )}
+            <div className={leftThumbnailHovered && isMobile ? "thumbnail-container big-mode" : "thumbnail-container"}>
               <p className={leftThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>MTG Price Tutor</p>
               <div
                 className="thumbnail left"
-                onMouseEnter={() => setLeftThumbnailHovered(true)}
-                onMouseLeave={() => setLeftThumbnailHovered(false)}
+                {...(!isMobile
+                  ? {
+                      onMouseEnter: onLeftThumbnailHoveredHandler,
+                      onMouseLeave: onLeftThumbnailHoveredHandler,
+                    }
+                  : {
+                      onClick: onLeftThumbnailHoveredHandler,
+                    })}
               >
                 <button
                   className={leftThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
@@ -86,12 +111,18 @@ function App() {
                 <p className="description-text">{mtgPriceTutorDescription}</p>
               </div>
             </div>
-            <div className="thumbnail-container">
+            <div className={rightThumbnailHovered && isMobile ? "thumbnail-container big-mode" : "thumbnail-container"}>
               <p className={rightThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>RUNBEAT (WiP)</p>
               <div
                 className="thumbnail right"
-                onMouseEnter={() => setRightThumbnailHovered(true)}
-                onMouseLeave={() => setRightThumbnailHovered(false)}
+                {...(!isMobile
+                  ? {
+                      onMouseEnter: onRightThumbnailHoveredHandler,
+                      onMouseLeave: onRightThumbnailHoveredHandler,
+                    }
+                  : {
+                      onClick: onRightThumbnailHoveredHandler,
+                    })}
               >
                 <button
                   className={rightThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
