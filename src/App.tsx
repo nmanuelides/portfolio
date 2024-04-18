@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.scss";
 import "./mobile.scss";
 import { mtgPriceTutorDescription, runBeatDescription, aboutMyself } from "./sitesDescriptions.js";
@@ -28,6 +28,8 @@ function App() {
   const [leftThumbnailHovered, setLeftThumbnailHovered] = useState(false);
   const [rightThumbnailHovered, setRightThumbnailHovered] = useState(false);
   const fade = () => setFadeToBlack(!fadeToBlack);
+  let isMobile = useIsMobile();
+
   const navigateToRunBeat = () => {
     fade();
     setTimeout(() => {
@@ -62,7 +64,7 @@ function App() {
           </div>
           <b className="my-projects-title">My React Projects</b>
           <div className="thumbnails-container">
-            <div className="thumbnail-container">
+            <div className={leftThumbnailHovered && isMobile ? "thumbnail-container__big-mode" : "thumbnail-container"}>
               <p className={leftThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>MTG Price Tutor</p>
               <div
                 className="thumbnail left"
