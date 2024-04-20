@@ -30,6 +30,10 @@ function App() {
   const fade = () => setFadeToBlack(!fadeToBlack);
   let isMobile = useIsMobile();
 
+  useEffect(() => {
+    setFadeToBlack(false);
+  }, []);
+
   const navigateToRunBeat = () => {
     fade();
     setTimeout(() => {
@@ -52,6 +56,16 @@ function App() {
     setRightThumbnailHovered(!rightThumbnailHovered);
   };
 
+  const shouldShowModal = () => {
+    const showModal = isMobile && (leftThumbnailHovered || rightThumbnailHovered);
+    if (showModal) {
+      document.body.classList.add("body-no-scroll");
+    } else {
+      document.body.classList.remove("body-no-scroll");
+    }
+    return showModal;
+  };
+
   return (
     <div className="App">
       <Spheres />
@@ -72,7 +86,7 @@ function App() {
           </div>
           <b className="my-projects-title">My React Projects</b>
           <div className="thumbnails-container">
-            {isMobile && (leftThumbnailHovered || rightThumbnailHovered) && (
+            {shouldShowModal() && (
               <button
                 className="close-button"
                 onClick={() => {

@@ -15,6 +15,9 @@
 }
 
 @media (max-width: 768px) {
+  .body-no-scroll {
+    overflow: hidden;
+  }
   .App::after {
     content: none;
   }
@@ -95,13 +98,13 @@
             border-radius: 48px;
             border: 2px solid var(--accent);
             position: absolute;
-            bottom: 50%;
+            bottom: 54%;
             right: 10%;
-            background: rgba(255, 255, 255, 0.65);
+            background: rgba(255, 255, 255, 0.2);
             color: var(--accent);
             line-height: 1rem;
-            font-family: "TommyRegular";
-            font-size: 2.4rem;
+            font-family: "TommyLight";
+            font-size: 2rem;
             z-index: 2001;
           }
           .thumbnail-container {
@@ -211,7 +214,7 @@
             height: 100vh;
             top: -13%;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(20px);
             z-index: -30;
           }
