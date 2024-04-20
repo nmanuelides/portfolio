@@ -1,8 +1,7 @@
 @import "./colors.scss";
-@media (prefers-color-scheme: dark) {
-  meta[name="theme-color"] {
-    content: $light-grape; /* Replace with your preferred color */
-  }
+
+@media (max-width: 768px) {
+  @import "./mobile.scss";
 }
 
 :root {
@@ -40,7 +39,7 @@
 }
 
 body {
-  background: $darker-grape;
+  background: var(--darker-grape);
 }
 .App {
   display: flex;
@@ -93,7 +92,7 @@ body {
         font-family: "Skyer";
         mix-blend-mode: overlay;
         line-height: 3rem;
-        color: $peach;
+        color: var(--peach);
         margin-top: 16px;
         animation: subtitleMoveIn 1.2s ease-in-out forwards;
         animation-delay: 2s;
@@ -117,14 +116,14 @@ body {
         padding: 32px;
         margin-left: 32px;
         border-radius: 32px;
-        background-color: rgba($darker-grape, 0.35);
+        background-color: rgba(var(--darker-grape), 0.35);
         box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.25) inset;
 
         &__title {
           display: flex;
           align-items: center;
           margin-bottom: 16px;
-          color: $arrakis-sand;
+          color: var(--arrakis-sand);
           font-size: calc(10% + 1.6rem);
           font-size: 1.6rem;
           font-family: "TommyLight";
@@ -133,7 +132,12 @@ body {
         &__text {
           width: 95%;
           margin-top: 4px;
-          background-image: linear-gradient(130deg, $arrakis-sand 30%, $light-grape 40%, $arrakis-sand 50%);
+          background-image: linear-gradient(
+            130deg,
+            var(--arrakis-sand) 30%,
+            var(--accent) 40%,
+            var(--arrakis-sand) 50%
+          );
           background-size: 200% 300%;
           background-clip: text;
           font-family: "TommyRegular";
@@ -145,7 +149,7 @@ body {
       .my-projects-title {
         align-self: center;
         margin-top: 48px;
-        color: $arrakis-sand;
+        color: var(--arrakis-sand);
         font-family: "TommyLight";
         font-size: 1.6rem;
       }
@@ -171,7 +175,7 @@ body {
           .thumbnail-title {
             font-family: "TommyRegular";
             font-size: 1.2rem;
-            color: $arrakis-sand;
+            color: var(--arrakis-sand);
             position: relative;
             align-self: flex-start;
             bottom: -40px;
@@ -189,7 +193,7 @@ body {
             content: "";
             width: 1px;
             height: 18px;
-            background: $arrakis-sand;
+            background: var(--arrakis-sand);
             position: absolute;
             bottom: -85%;
             left: 30px;
@@ -200,7 +204,7 @@ body {
             align-items: center;
             width: 80%;
             height: 65%;
-            border: 1px solid #bb1cff;
+            border: 1px solid var(--accent);
             background-size: cover;
             background-position: center center;
             transform: scale(0);
@@ -217,7 +221,7 @@ body {
                 background: none;
                 border: none;
                 font-size: 1.2rem;
-                color: $arrakis-sand;
+                color: var(--arrakis-sand);
                 font-family: "TommyRegular", sans-serif;
                 cursor: pointer;
                 opacity: 0;
@@ -227,10 +231,10 @@ body {
               &__visible {
                 background: none;
                 z-index: 100;
-                border: 1px solid $arrakis-sand;
+                border: 1px solid var(--arrakis-sand);
                 border-radius: 6px;
                 font-size: 1.2rem;
-                color: $arrakis-sand;
+                color: var(--arrakis-sand);
                 backdrop-filter: blur(12px);
                 font-family: "TommyRegular", sans-serif;
                 cursor: pointer;
@@ -240,7 +244,7 @@ body {
               }
 
               &__visible:hover {
-                border: 1px solid $light-grape;
+                border: 1px solid var(--accent);
                 filter: brightness(1.5);
                 box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.3);
               }
@@ -313,7 +317,12 @@ body {
             z-index: -2;
 
             .description-text {
-              background-image: linear-gradient(130deg, $arrakis-sand 30%, $light-grape 40%, $arrakis-sand 50%);
+              background-image: linear-gradient(
+                130deg,
+                var(--arrakis-sand) 30%,
+                var(--accent) 40%,
+                var(--arrakis-sand) 50%
+              );
               background-size: 200% 300%;
               background-clip: text;
               padding: 6px 24px;
@@ -335,12 +344,12 @@ body {
         padding: 32px;
         margin-left: 32px;
         border-radius: 32px;
-        background-color: rgba($darker-grape, 0.35);
+        background-color: rgba(var(--darker-grape), 0.35);
         box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.25) inset;
         &__title {
           display: flex;
           align-items: center;
-          color: $arrakis-sand;
+          color: var(--arrakis-sand);
           font-size: calc(10% + 1.6rem);
           font-size: 1.6rem;
           font-family: "TommyLight";

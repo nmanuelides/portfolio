@@ -1,10 +1,11 @@
 import "../styles/desktop.scss";
+import "../styles/mobile.scss";
 import { useIsMobile } from "../../../hooks/useIsMobile";
 
-const Spheres = () =>  {
+const Spheres = () => {
   const isMobile: boolean = useIsMobile();
   return (
-    <div className={isMobile ? "spheres-container-mobile" : "spheres-container"}>
+    <div className="spheres-container">
       <div className="sphere1" />
       <div className="sphere2" />
       <div className="sphere3" />

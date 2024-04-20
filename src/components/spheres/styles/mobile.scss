@@ -2,12 +2,12 @@
 
 .spheres-container {
   --spheres-speed: 20s;
-  height: 100%;
-  width: 100%;
+  height: 100svh;
+  width: 100svw;
   position: absolute;
   background: var(--darker-grape);
   z-index: -2;
-  filter: blur(100px);
+  filter: blur(80px);
 
   .sphere1 {
     height: 65%;
