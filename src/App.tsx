@@ -31,8 +31,16 @@ function App() {
   let isMobile = useIsMobile();
 
   useEffect(() => {
-    setFadeToBlack(false);
-  }, []);
+    const handlePopState = () => {
+      setFadeToBlack(false);
+    };
+
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [location]);
 
   const navigateToRunBeat = () => {
     fade();
