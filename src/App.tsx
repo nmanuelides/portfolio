@@ -31,16 +31,18 @@ function App() {
   let isMobile = useIsMobile();
 
   useEffect(() => {
-    const handlePopState = () => {
-      setFadeToBlack(false);
+    const handlePageShow = (event: PageTransitionEvent) => {
+      if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+        setFadeToBlack(false);
+      }
     };
 
-    window.addEventListener("popstate", handlePopState);
+    window.addEventListener("pageshow", handlePageShow);
 
     return () => {
-      window.removeEventListener("popstate", handlePopState);
+      window.removeEventListener("pageshow", handlePageShow);
     };
-  }, [location]);
+  }, []);
 
   const navigateToRunBeat = () => {
     fade();
