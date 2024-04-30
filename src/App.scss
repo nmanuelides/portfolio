@@ -34,6 +34,12 @@
   src: url("./assets/Skyer.otf") format("truetype");
 }
 
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   background: var(--darker-grape);
 }
