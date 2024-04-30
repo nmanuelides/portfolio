@@ -1,6 +1,6 @@
 import "../styles/desktop.scss";
 
-type LogoTileProps = {
+export type LogoTileProps = {
   image: string;
   title: string;
   size: "small" | "medium" | "large";

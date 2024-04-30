@@ -1,0 +1,44 @@
+@import "../../../colors.scss";
+
+.skills-container {
+  height: auto;
+  width: 25svw;
+  padding: 32px;
+  margin-left: 32px;
+  margin-bottom: 32px;
+  border-radius: 32px;
+  background-color: var(--darker-grape);
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.25) inset;
+  &__title {
+    display: flex;
+    align-items: center;
+    color: var(--arrakis-sand);
+    font-size: calc(10% + 1.6rem);
+    font-size: 1.6rem;
+    font-family: "TommyLight";
+  }
+
+  &__languages {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__skills {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    justify-content: center;
+    gap: 24px;
+  }
+  &__skills > :last-child {
+    grid-column: 2;
+  }
+}
+.skills-container:nth-child(2) {
+//   margin-top: 32px;
+}

@@ -5,23 +5,8 @@ import { mtgPriceTutorDescription, runBeatDescription, aboutMyself } from "./sit
 import { useIsMobile } from "./hooks/useIsMobile";
 import niki from "./assets/niki.png";
 import Spheres from "./components/spheres/src/Spheres";
-import LogoTile from "./components/logo-tile/src/LogoTile";
-import javaLogo from "./assets/java-logo.png";
-import javascriptLogo from "./assets/js-logo.png";
-import typescriptLogo from "./assets/ts-logo.svg";
-import agileLogo from "./assets/agile-logo.png";
-import androidLogo from "./assets/android-logo.png";
-import cssLogo from "./assets/css-logo.png";
-import figmaLogo from "./assets/figma-logo.webp";
-import gitLogo from "./assets/git-logo.png";
-import graphqlLogo from "./assets/graphql-logo.png";
-import htmlLogo from "./assets/html-logo.png";
-import jestLogo from "./assets/jest-logo.webp";
-import photoshopLogo from "./assets/photoshop-logo.png";
-import reactjsLogo from "./assets/reactjs-logo.png";
-import sassLogo from "./assets/sass-logo.png";
-import storybookLogo from "./assets/storybook-logo.svg";
-import uiuxdesignLogo from "./assets/uiuxdesign-logo.jpg";
+import LogoTilesContainer from "./components/logo-tiles-container/src/LogoTilesContainer";
+import { languages, skills } from "./logoTiles";
 
 function App() {
   const [fadeToBlack, setFadeToBlack] = useState(false);
@@ -86,7 +71,7 @@ function App() {
           <p className="header-subtitle__portfolio">portfolio</p>
         </div>
       </header>
-      <section className="main-content">
+      <div className="main-content">
         <section className="left-column">
           <div className="about-container">
             <b className="about-container__title">About Myself</b>
@@ -166,34 +151,11 @@ function App() {
           </div>
         </section>
         <section className="right-column">
-          <div className="skills-container">
-            <b className="skills-container__title">Programming Languages</b>
-            <div className="skills-container__languages">
-              <LogoTile image={javaLogo} title="Java" size="medium" />
-              <LogoTile image={javascriptLogo} title="Javascript" size="medium" />
-              <LogoTile image={typescriptLogo} title="Typescript" size="medium" />
-            </div>
-          </div>
-          <div className="skills-container">
-            <b className="skills-container__title">Skills</b>
-            <div className="skills-container__skills">
-              <LogoTile image={reactjsLogo} title="React JS" size="small" />
-              <LogoTile image={htmlLogo} title="HTML" size="small" />
-              <LogoTile image={cssLogo} title="CSS" size="small" />
-              <LogoTile image={sassLogo} title="Sass" size="small" />
-              <LogoTile image={storybookLogo} title="Storybook" size="small" />
-              <LogoTile image={jestLogo} title="Jest" size="small" />
-              <LogoTile image={figmaLogo} title="Figma" size="small" />
-              <LogoTile image={gitLogo} title="Git" size="small" />
-              <LogoTile image={androidLogo} title="Android" size="small" />
-              <LogoTile image={graphqlLogo} title="GraphQL" size="small" />
-              <LogoTile image={photoshopLogo} title="Photoshop" size="small" />
-              <LogoTile image={uiuxdesignLogo} title="UI/UX Design" size="small" />
-              <LogoTile image={agileLogo} title="Agile Methdology" size="small" />
-            </div>
-          </div>
+          <LogoTilesContainer title="Programming Languages" tiles={languages}/>
+          <LogoTilesContainer title="Skills" tiles={skills}/>
+          
         </section>
-      </section>
+      </div>
       <div className={!fadeToBlack ? "fade-to-black_off" : "fade-to-black__on"} onClick={fade} />
       <div className={!fadeToBlack ? "blur__off" : "blur__on"} />
     </div>
