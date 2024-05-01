@@ -7,9 +7,10 @@ type ThumbnailProps = {
   navigateToUrl: () => void;
   onThumbnailHovered: () => void;
   description: string;
+  id: string;
 };
 
-const Thumbnail = ({ navigateToUrl, description, onThumbnailHovered }: ThumbnailProps) => {
+const Thumbnail = ({ navigateToUrl, description, onThumbnailHovered, id }: ThumbnailProps) => {
   const [thumbnailHovered, setThumbnailHovered] = useState(false);
   let isMobile = useIsMobile();
 
@@ -19,13 +20,7 @@ const Thumbnail = ({ navigateToUrl, description, onThumbnailHovered }: Thumbnail
   };
 
   const shouldShowModal = () => {
-    const showModal = isMobile && thumbnailHovered;
-    if (showModal) {
-      document.body.classList.add("body-no-scroll");
-    } else {
-        document.body.classList.remove("body-no-scroll");
-    }
-    return showModal;
+    return isMobile && thumbnailHovered;
   };
 
   return (
@@ -40,7 +35,7 @@ const Thumbnail = ({ navigateToUrl, description, onThumbnailHovered }: Thumbnail
           x
         </button>
       )}
-      <div className={thumbnailHovered && isMobile ? "thumbnail-container big-mode" : "thumbnail-container"}>
+      <div id={id} className={thumbnailHovered && isMobile ? "thumbnail-container big-mode" : "thumbnail-container"}>
         <p className={thumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>MTG Price Tutor</p>
         <div
           className="thumbnail"

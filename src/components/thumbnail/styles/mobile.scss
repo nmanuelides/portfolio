@@ -1,6 +1,7 @@
 @media (max-width: 768px) {
-  .body-no-scroll {
-    overflow: hidden;
+  .App:has(.thumbnail-container.big-mode) {
+    overflow-y: hidden;
+    height: 100%;
   }
   .close-button {
     height: 56px;
@@ -9,7 +10,7 @@
     border-radius: 48px;
     border: 2px solid var(--accent);
     position: absolute;
-    bottom: 20%;
+    bottom: 15%;
     right: 10%;
     background: rgba(255, 255, 255, 0.2);
     color: var(--accent);
@@ -69,11 +70,15 @@
       position: absolute;
       backdrop-filter: blur(1px) saturate(0);
     }
-    .right-info-card,
-    .left-info-card {
+    .info-card {
+      &__container-visible {
+        position: relative;
+        width: 280px;
+        top: 0%;
+      }
       &__container-hidden {
         width: 280px;
-        top: 5%;
+        top: -25%;
       }
     }
   }

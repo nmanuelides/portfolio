@@ -91,9 +91,10 @@
         }
         .thumbnails-container {
           flex-direction: column;
+          grid-template-rows: 200px;
           width: 94%;
-          height: fit-content;
           margin: 0;
+          margin-bottom: 32px;
           gap: 10px;
         }
       }
