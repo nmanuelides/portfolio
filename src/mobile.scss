@@ -15,6 +15,9 @@
 }
 
 @media (max-width: 768px) {
+  #root {
+    overflow: visible;
+  }
   .body-no-scroll {
     overflow: hidden;
   }
@@ -26,7 +29,8 @@
   }
   .App {
     width: 100svw;
-    overflow: hidden;
+    height: 100svh;
+    overflow-x: hidden;
     .App-header {
       margin: 0;
       margin-left: 16px;
@@ -107,117 +111,18 @@
             font-size: 2rem;
             z-index: 2001;
           }
-          .thumbnail-container {
-            justify-content: flex-start;
-            margin: 0;
-            margin-top: 8px;
-            .thumbnail-title {
-              &__hidden {
-                align-self: flex-start;
-                font-family: "TommyLight";
-                font-size: 1rem;
-                color: var(--arrakis-sand);
-                position: relative;
-                bottom: -40px;
-                animation: moveIn 0.5s 1.35s ease-in-out forwards;
-                opacity: 0;
-              }
-              transition: all 0.3s ease-in-out;
-            }
-            .thumbnail-title::after {
-              width: 0px;
-              height: 18px;
-              background: var(--arrakis-sand);
-              position: absolute;
-              bottom: -85%;
-              left: 30px;
-            }
-            .thumbnail {
-              display: flex;
-              align-items: center;
-              width: 180px;
-              height: 130px;
-              border-radius: 20px;
+        }
 
-              .go-to-button {
-                &__hidden {
-                  transform: translate(0, 150px);
-                }
-                &__visible {
-                  border: 1px solid var(--accent);
-                  filter: brightness(1.5);
-                  box-shadow: 0 0 8px 5px rgba(0, 0, 0, 0.3);
-                  transform: translate(0, 50px);
-                }
-              }
-            }
-            .thumbnail::after {
-              content: "";
-              width: 100%;
-              height: 100%;
-              position: absolute;
-              backdrop-filter: blur(1px) saturate(0);
-            }
-            .right-info-card,
-            .left-info-card {
-              &__container-hidden {
-                width: 280px;
-                top: 5%;
-              }
-            }
-          }
-
-          .thumbnail-container.big-mode {
-            position: absolute;
-            top: 12%;
-            left: 0;
-            z-index: 2000;
-            .thumbnail-title {
-              align-self: center;
-              font-family: "TommyLight";
-              font-size: 1rem;
-              color: var(--arrakis-sand);
-              position: relative;
-              bottom: -40px;
-              animation: moveIn 0.5s 3s ease-in-out forwards;
-              opacity: 0;
-            }
-            .thumbnail {
-              width: 300px;
-              height: 200px;
-            }
-            .right-info-card,
-            .left-info-card {
-              &__container-visible {
-                background: rgba(255, 255, 255, 0.15);
-                border: 1px solid var(--accent);
-                width: 280px;
-                padding-top: 16px;
-                font-size: 0.8rem;
-                top: 16%;
-                transition: all 0.4s 0.3s ease-in-out;
-
-                .description-text {
-                  text-align: center;
-                  padding: 8px;
-                  padding-bottom: 16px;
-                  margin: 0;
-                }
-              }
-            }
-          }
-
-          .thumbnail-container.big-mode::after {
-            content: "";
-            position: absolute;
-            width: 100svw;
-            height: 100vh;
-            top: -13%;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(20px);
-            z-index: -30;
-          }
+        .thumbnail-container.big-mode::after {
+          content: "";
+          position: absolute;
+          width: 100svw;
+          height: 100vh;
+          top: -13%;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.3);
+          backdrop-filter: blur(20px);
+          z-index: -30;
         }
       }
       .right-column {
@@ -225,44 +130,44 @@
         flex-direction: column;
         width: 100%;
         align-items: center;
-        gap: 32px;
         .skills-container {
           display: flex;
           flex-direction: column;
           align-items: center;
           width: 80svw;
           margin: 0;
+          margin-bottom: 32px;
           padding: 16px;
         }
       }
     }
-
-    .thumbnail-title__hidden::after {
-      content: "";
-      width: 1px;
-      height: 18px;
-      background: var(--arrakis-sand);
-      position: absolute;
-      bottom: -85%;
-      left: 10%;
-    }
   }
 
-  @keyframes moveIn {
-    100% {
-      opacity: 1;
-      bottom: 0;
-    }
+  .thumbnail-title__hidden::after {
+    content: "";
+    width: 1px;
+    height: 18px;
+    background: var(--arrakis-sand);
+    position: absolute;
+    bottom: -85%;
+    left: 10%;
   }
-  @keyframes subtitleMoveIn {
-    0% {
-      opacity: 0;
-    }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      left: 64%;
-    }
+}
+
+@keyframes moveIn {
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}
+@keyframes subtitleMoveIn {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    left: 64%;
   }
 }

@@ -7,6 +7,7 @@ import niki from "./assets/niki.png";
 import Spheres from "./components/spheres/src/Spheres";
 import LogoTilesContainer from "./components/logo-tiles-container/src/LogoTilesContainer";
 import { languages, skills } from "./logoTiles";
+import Thumbnail from "./components/thumbnail/src/Thumbnail";
 
 function App() {
   const [fadeToBlack, setFadeToBlack] = useState(false);
@@ -92,68 +93,13 @@ function App() {
                 x
               </button>
             )}
-            <div className={leftThumbnailHovered && isMobile ? "thumbnail-container big-mode" : "thumbnail-container"}>
-              <p className={leftThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>MTG Price Tutor</p>
-              <div
-                className="thumbnail left"
-                {...(!isMobile
-                  ? {
-                      onMouseEnter: onLeftThumbnailHoveredHandler,
-                      onMouseLeave: onLeftThumbnailHoveredHandler,
-                    }
-                  : {
-                      onClick: onLeftThumbnailHoveredHandler,
-                    })}
-              >
-                <button
-                  className={leftThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
-                  onClick={navigateToMTGPT}
-                >
-                  GO TO
-                </button>
-              </div>
-              <div
-                className={
-                  leftThumbnailHovered ? "left-info-card__container-visible" : "left-info-card__container-hidden"
-                }
-              >
-                <p className="description-text">{mtgPriceTutorDescription}</p>
-              </div>
-            </div>
-            <div className={rightThumbnailHovered && isMobile ? "thumbnail-container big-mode" : "thumbnail-container"}>
-              <p className={rightThumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>RUNBEAT (WiP)</p>
-              <div
-                className="thumbnail right"
-                {...(!isMobile
-                  ? {
-                      onMouseEnter: onRightThumbnailHoveredHandler,
-                      onMouseLeave: onRightThumbnailHoveredHandler,
-                    }
-                  : {
-                      onClick: onRightThumbnailHoveredHandler,
-                    })}
-              >
-                <button
-                  className={rightThumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
-                  onClick={navigateToRunBeat}
-                >
-                  GO TO
-                </button>
-              </div>
-              <div
-                className={
-                  rightThumbnailHovered ? "right-info-card__container-visible" : "right-info-card__container-hidden"
-                }
-              >
-                <p className="description-text">{runBeatDescription}</p>
-              </div>
-            </div>
+            <Thumbnail navigateToUrl={navigateToMTGPT} description={mtgPriceTutorDescription} />
+            <Thumbnail navigateToUrl={navigateToRunBeat} description={runBeatDescription} />
           </div>
         </section>
         <section className="right-column">
-          <LogoTilesContainer title="Programming Languages" tiles={languages}/>
-          <LogoTilesContainer title="Skills" tiles={skills}/>
-          
+          <LogoTilesContainer title="Programming Languages" tiles={languages} />
+          <LogoTilesContainer title="Skills" tiles={skills} />
         </section>
       </div>
       <div className={!fadeToBlack ? "fade-to-black_off" : "fade-to-black__on"} onClick={fade} />
