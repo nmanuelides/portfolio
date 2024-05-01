@@ -10,7 +10,7 @@ const LogoTilesContainer = ({ title, tiles }: LogoTilesContainerProps): JSX.Elem
   return (
     <div className="skills-container">
       <b className="skills-container__title">{title}</b>
-      <div className="skills-container__languages">
+      <div className="skills-container__skills">
         {tiles &&
           tiles.length > 0 &&
           tiles.map((tile) => {

@@ -18,15 +18,6 @@
     font-family: "TommyLight";
   }
 
-  &__languages {
-    margin-top: 48px;
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
-    justify-content: center;
-    gap: 16px;
-    width: 100%;
-  }
-
   &__skills {
     margin-top: 48px;
     display: grid;
@@ -35,10 +26,10 @@
     justify-content: center;
     gap: 24px;
   }
-  &__skills > :last-child {
+}
+
+.skills-container:last-of-type {
+  .logo-tile-container:last-child {
     grid-column: 2;
   }
-}
-.skills-container:nth-child(2) {
-//   margin-top: 32px;
 }

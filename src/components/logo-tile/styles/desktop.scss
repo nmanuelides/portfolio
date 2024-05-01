@@ -1,32 +1,33 @@
 .logo-tile-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    &__image.medium {
-        width: 75%;
-        max-width: 64px;
-        border-radius: 8px;
-        box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3);
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
-    &__image.small {
-        width: 48px;
-        height: 48px;
-        border-radius: 8px;
-        box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3);
-    }
+  &__image.medium {
+    width: 75%;
+    max-width: 64px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3);
+  }
 
-    &__title.medium {
-        margin-top: 8px;
-        font-family: "TommyLight";
-        color: white;
-    }
-    &__title.small {
-        margin-top: 8px;
-        font-size: 0.8rem;
-        font-family: "TommyLight";
-        color: white;
-    }
+  &__image.small {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3);
+  }
+
+  &__title.medium {
+    margin-top: 8px;
+    font-family: "TommyLight";
+    color: white;
+  }
+  &__title.small {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    font-family: "TommyLight";
+    color: white;
+  }
 }
