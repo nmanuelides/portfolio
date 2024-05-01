@@ -95,34 +95,6 @@
           height: fit-content;
           margin: 0;
           gap: 10px;
-          .close-button {
-            height: 48px;
-            width: 48px;
-            padding-bottom: 6px;
-            border-radius: 48px;
-            border: 2px solid var(--accent);
-            position: absolute;
-            bottom: 54%;
-            right: 10%;
-            background: rgba(255, 255, 255, 0.2);
-            color: var(--accent);
-            line-height: 1rem;
-            font-family: "TommyLight";
-            font-size: 2rem;
-            z-index: 2001;
-          }
-        }
-
-        .thumbnail-container.big-mode::after {
-          content: "";
-          position: absolute;
-          width: 100svw;
-          height: 100vh;
-          top: -13%;
-          bottom: 0;
-          background: rgba(0, 0, 0, 0.3);
-          backdrop-filter: blur(20px);
-          z-index: -30;
         }
       }
       .right-column {

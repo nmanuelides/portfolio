@@ -11,8 +11,7 @@ import Thumbnail from "./components/thumbnail/src/Thumbnail";
 
 function App() {
   const [fadeToBlack, setFadeToBlack] = useState(false);
-  const [leftThumbnailHovered, setLeftThumbnailHovered] = useState(false);
-  const [rightThumbnailHovered, setRightThumbnailHovered] = useState(false);
+  const [thumbnailHovered, setThumbnailHovered] = useState(false);
   const fade = () => setFadeToBlack(!fadeToBlack);
   let isMobile = useIsMobile();
 
@@ -44,22 +43,8 @@ function App() {
     }, 1000);
   };
 
-  const onLeftThumbnailHoveredHandler = () => {
-    setLeftThumbnailHovered(!leftThumbnailHovered);
-  };
-
-  const onRightThumbnailHoveredHandler = () => {
-    setRightThumbnailHovered(!rightThumbnailHovered);
-  };
-
-  const shouldShowModal = () => {
-    const showModal = isMobile && (leftThumbnailHovered || rightThumbnailHovered);
-    if (showModal) {
-      document.body.classList.add("body-no-scroll");
-    } else {
-      document.body.classList.remove("body-no-scroll");
-    }
-    return showModal;
+  const onThumbnailHoveredHandler = () => {
+    setThumbnailHovered(!thumbnailHovered);
   };
 
   return (
@@ -82,19 +67,16 @@ function App() {
           </div>
           <b className="my-projects-title">My React Projects</b>
           <div className="thumbnails-container">
-            {shouldShowModal() && (
-              <button
-                className="close-button"
-                onClick={() => {
-                  setLeftThumbnailHovered(false);
-                  setRightThumbnailHovered(false);
-                }}
-              >
-                x
-              </button>
-            )}
-            <Thumbnail navigateToUrl={navigateToMTGPT} description={mtgPriceTutorDescription} />
-            <Thumbnail navigateToUrl={navigateToRunBeat} description={runBeatDescription} />
+            <Thumbnail
+              navigateToUrl={navigateToMTGPT}
+              description={mtgPriceTutorDescription}
+              onThumbnailHovered={onThumbnailHoveredHandler}
+            />
+            <Thumbnail
+              navigateToUrl={navigateToRunBeat}
+              description={runBeatDescription}
+              onThumbnailHovered={onThumbnailHoveredHandler}
+            />
           </div>
         </section>
         <section className="right-column">
