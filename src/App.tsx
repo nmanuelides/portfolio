@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.scss";
 import "./mobile.scss";
 import { mtgPriceTutorDescription, runBeatDescription, aboutMyself } from "./sitesDescriptions.js";
-import { useIsMobile } from "./hooks/useIsMobile";
 import niki from "./assets/niki.png";
 import Spheres from "./components/spheres/src/Spheres";
 import LogoTilesContainer from "./components/logo-tiles-container/src/LogoTilesContainer";
@@ -13,7 +12,6 @@ function App() {
   const [fadeToBlack, setFadeToBlack] = useState(false);
   const [thumbnailHovered, setThumbnailHovered] = useState(false);
   const fade = () => setFadeToBlack(!fadeToBlack);
-  let isMobile = useIsMobile();
 
   useEffect(() => {
     const handlePageShow = (event: PageTransitionEvent) => {
@@ -71,7 +69,7 @@ function App() {
               navigateToUrl={navigateToMTGPT}
               description={mtgPriceTutorDescription}
               onThumbnailHovered={onThumbnailHoveredHandler}
-              id='mtg'
+              id="mtg"
             />
             <Thumbnail
               navigateToUrl={navigateToRunBeat}
