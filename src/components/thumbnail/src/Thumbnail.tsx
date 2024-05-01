@@ -7,10 +7,11 @@ type ThumbnailProps = {
   navigateToUrl: () => void;
   onThumbnailHovered: () => void;
   description: string;
+  title: string;
   id: string;
 };
 
-const Thumbnail = ({ navigateToUrl, description, onThumbnailHovered, id }: ThumbnailProps) => {
+const Thumbnail = ({ navigateToUrl, description, title, onThumbnailHovered, id }: ThumbnailProps) => {
   const [thumbnailHovered, setThumbnailHovered] = useState(false);
   let isMobile = useIsMobile();
 
@@ -36,7 +37,7 @@ const Thumbnail = ({ navigateToUrl, description, onThumbnailHovered, id }: Thumb
         </button>
       )}
       <div id={id} className={thumbnailHovered && isMobile ? "thumbnail-container big-mode" : "thumbnail-container"}>
-        <p className={thumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>MTG Price Tutor</p>
+        <p className={thumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>{title}</p>
         <div
           className="thumbnail"
           {...(!isMobile

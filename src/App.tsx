@@ -68,12 +68,14 @@ function App() {
             <Thumbnail
               navigateToUrl={navigateToMTGPT}
               description={mtgPriceTutorDescription}
+              title="MTG Price Tutor"
               onThumbnailHovered={onThumbnailHoveredHandler}
               id="mtg"
             />
             <Thumbnail
               navigateToUrl={navigateToRunBeat}
               description={runBeatDescription}
+              title="RunBeat"
               onThumbnailHovered={onThumbnailHoveredHandler}
               id="runbeat"
             />
