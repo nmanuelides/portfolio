@@ -1,21 +1,58 @@
 import { useEffect, useState } from "react";
 import "./App.scss";
 import "./mobile.scss";
-import { mtgPriceTutorDescription, runBeatDescription, aboutMyself } from "./sitesDescriptions.js";
+import "./main.scss";
+import {
+  mtgPriceTutorDescription,
+  runBeatDescription,
+  aboutMyself,
+} from "./sitesDescriptions.js";
 import niki from "./assets/niki.png";
 import Spheres from "./components/spheres/src/Spheres";
 import LogoTilesContainer from "./components/logo-tiles-container/src/LogoTilesContainer";
 import { languages, skills } from "./logoTiles";
 import Thumbnail from "./components/thumbnail/src/Thumbnail";
+import mtgptThumbnailImage from "./assets/mtgpt-thumbnail.png";
+import runBeatThumbnailImage from "./assets/runbeat-thumbnail.png";
+import plasterBg1 from "./assets/plasterBg1s.jpg";
+import useIsScrolledIntoView from "./hooks/useIsScrolledIntoView";
 
 function App() {
   const [fadeToBlack, setFadeToBlack] = useState(false);
   const [thumbnailHovered, setThumbnailHovered] = useState(false);
   const fade = () => setFadeToBlack(!fadeToBlack);
+  const animateIntoViewClass = "into-view";
+  const mtgptThumbnailDescriptionClass = "mtgpt-thumbnail__description";
+  const runbeatThumbnailDescriptionClass = "runbeat-thumbnail__description";
+
+  //Scoll into view hooks
+  const mtgptDescriptionRef = useIsScrolledIntoView(
+    "." + runbeatThumbnailDescriptionClass,
+    animateIntoViewClass,
+    0.1
+  );
+  const runBeatDescriptionRef = useIsScrolledIntoView(
+    "." + mtgptThumbnailDescriptionClass,
+    animateIntoViewClass,
+    0.1
+  );
+  const mtgptThumbnailTitleRef = useIsScrolledIntoView(
+    ".mtgpt-thumbnail__title",
+    animateIntoViewClass,
+    0.1
+  );
+  const runBeatThumbnailTitleRef = useIsScrolledIntoView(
+    ".runbeat-thumbnail__title",
+    animateIntoViewClass,
+    0.1
+  );
 
   useEffect(() => {
     const handlePageShow = (event: PageTransitionEvent) => {
-      if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+      if (
+        event.persisted ||
+        (window.performance && window.performance.navigation.type === 2)
+      ) {
         setFadeToBlack(false);
       }
     };
@@ -30,7 +67,8 @@ function App() {
   const navigateToRunBeat = () => {
     fade();
     setTimeout(() => {
-      window.location.href = "https://nmanuelides.github.io/runbeat/?from=portfolio";
+      window.location.href =
+        "https://nmanuelides.github.io/runbeat/?from=portfolio";
     }, 1000);
   };
 
@@ -45,49 +83,88 @@ function App() {
     setThumbnailHovered(!thumbnailHovered);
   };
 
+  const title = ".NIKI MANUELIDES";
+  const splittedTitle = title.split("");
+
   return (
-    <div className="App">
-      <Spheres />
-      <header className="App-header">
-        <img src={niki} className="niki" />
-        <div className="header-subtitle">
-          <p className="header-subtitle__manuelides">MANUELIDES</p>
-          <p className="header-subtitle__portfolio">portfolio</p>
+    <div className="main__container">
+      {/*<div className="bgImage" />*/}
+      {/* <div className="overlays__container">
+        <div className="colorOverlay__top-1" />
+        <div className="colorOverlay__top-2" />
+      </div>
+      {/* <div className="backgrounds__container">
+        <div className="top__background"></div>
+        <div className="middle__background" />
+        <div className="bottom__background" />
+      </div> */}
+      <div className="content__container">
+        <div className="header__container">
+          <div className="title">
+            {splittedTitle.map((char, index) => (
+              <span key={char + index} className="title-char">
+                {char}
+              </span>
+            ))}
+          </div>
+          <p className="subtitle">frontend portfolio</p>
         </div>
-      </header>
-      <div className="main-content">
-        <section className="left-column">
-          <div className="about-container">
-            <b className="about-container__title">About Myself</b>
-            <div className="about-container__text">
-              <b>{aboutMyself}</b>
+        <div className="aboutMe__container">
+          <div className="aboutMe__text-container">
+            <div className="aboutMe__label">
+              <p>About Me.</p>
+            </div>
+            <p>{aboutMyself}</p>
+          </div>
+        </div>
+        <div className="thumbnails__container">
+          <p className="thumbnails__title">Some of my work</p>
+          <div className="thumbnail__container mtgpt__container">
+            <p
+              className="thumbnail__title mtgpt-thumbnail__title"
+              ref={mtgptThumbnailTitleRef}
+            >
+              MTG Price Tutor
+            </p>
+            <div className="thumbnail__content mtgpt-thumbnail__content">
+              <Thumbnail
+                navigateToUrl={navigateToMTGPT}
+                onThumbnailHovered={onThumbnailHoveredHandler}
+                thumbnailImage={mtgptThumbnailImage}
+                id="mtg"
+              />
+              <p
+                className={`thumbnail__description ${mtgptThumbnailDescriptionClass}`}
+                ref={mtgptDescriptionRef}
+              >
+                {mtgPriceTutorDescription}
+              </p>
             </div>
           </div>
-          <b className="my-projects-title">My React Projects</b>
-          <div className="thumbnails-container">
-            <Thumbnail
-              navigateToUrl={navigateToMTGPT}
-              description={mtgPriceTutorDescription}
-              title="MTG Price Tutor"
-              onThumbnailHovered={onThumbnailHoveredHandler}
-              id="mtg"
-            />
-            <Thumbnail
-              navigateToUrl={navigateToRunBeat}
-              description={runBeatDescription}
-              title="RunBeat"
-              onThumbnailHovered={onThumbnailHoveredHandler}
-              id="runbeat"
-            />
+          <div className="thumbnail__container runbeat__container">
+            <p
+              className="thumbnail__title runbeat-thumbnail__title"
+              ref={runBeatThumbnailTitleRef}
+            >
+              <span>(wip)  </span>RUNBEAT
+            </p>
+            <div className="thumbnail__content runbeat-thumbnail__content">
+              <p
+                className={`thumbnail__description ${runbeatThumbnailDescriptionClass}`}
+                ref={runBeatDescriptionRef}
+              >
+                {runBeatDescription}
+              </p>
+              <Thumbnail
+                navigateToUrl={navigateToRunBeat}
+                onThumbnailHovered={onThumbnailHoveredHandler}
+                thumbnailImage={runBeatThumbnailImage}
+                id="runbeat"
+              />
+            </div>
           </div>
-        </section>
-        <section className="right-column">
-          <LogoTilesContainer title="Programming Languages" tiles={languages} />
-          <LogoTilesContainer title="Skills" tiles={skills} />
-        </section>
+        </div>
       </div>
-      <div className={!fadeToBlack ? "fade-to-black_off" : "fade-to-black__on"} onClick={fade} />
-      <div className={!fadeToBlack ? "blur__off" : "blur__on"} />
     </div>
   );
 }

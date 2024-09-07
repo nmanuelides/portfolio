@@ -8,7 +8,7 @@ import Cursor from "./components/cursor/src/Cursor";
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
-    <Cursor />
+    {/*<Cursor />*/}
     <App />
   </React.StrictMode>
 );

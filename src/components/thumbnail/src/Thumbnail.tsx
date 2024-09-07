@@ -1,20 +1,29 @@
 import { useState } from "react";
 import { useIsMobile } from "../../../hooks/useIsMobile";
+import useIsScrolledIntoView from "../../../hooks/useIsScrolledIntoView";
 import "../styles/desktop.scss";
 import "../styles/mobile.scss";
 
 type ThumbnailProps = {
   navigateToUrl: () => void;
   onThumbnailHovered: () => void;
-  description: string;
-  title: string;
+  thumbnailImage: string;
   id: string;
 };
 
-const Thumbnail = ({ navigateToUrl, description, title, onThumbnailHovered, id }: ThumbnailProps) => {
+const Thumbnail = ({
+  navigateToUrl,
+  onThumbnailHovered,
+  thumbnailImage,
+  id,
+}: ThumbnailProps) => {
   const [thumbnailHovered, setThumbnailHovered] = useState(false);
   let isMobile = useIsMobile();
-
+  const thumbnailRef = useIsScrolledIntoView(
+    `.thumbnail-${id}`,
+    "into-view",
+    0.1
+  );
   const onThumbnailHoveredHandler = () => {
     setThumbnailHovered(!thumbnailHovered);
     onThumbnailHovered();
@@ -36,10 +45,17 @@ const Thumbnail = ({ navigateToUrl, description, title, onThumbnailHovered, id }
           x
         </button>
       )}
-      <div id={id} className={thumbnailHovered && isMobile ? "thumbnail-container big-mode" : "thumbnail-container"}>
-        <p className={thumbnailHovered ? "thumbnail-title" : "thumbnail-title__hidden"}>{title}</p>
+      <div
+        id={id}
+        className={
+          thumbnailHovered && isMobile
+            ? "thumbnail-container big-mode"
+            : "thumbnail-container"
+        }
+      >
         <div
-          className="thumbnail"
+          className={`thumbnail ${"thumbnail-" + id}`}
+          ref={thumbnailRef}
           {...(!isMobile
             ? {
                 onMouseEnter: onThumbnailHoveredHandler,
@@ -49,15 +65,19 @@ const Thumbnail = ({ navigateToUrl, description, title, onThumbnailHovered, id }
                 onClick: onThumbnailHoveredHandler,
               })}
         >
+          <img
+            className="thumbnail__image"
+            src={thumbnailImage}
+            alt="website thumbnail"
+          />
           <button
-            className={thumbnailHovered ? "go-to-button__visible" : "go-to-button__hidden"}
+            className={
+              thumbnailHovered
+                ? "go-to-button__visible"
+                : "go-to-button__hidden"
+            }
             onClick={navigateToUrl}
-          >
-            GO TO
-          </button>
-        </div>
-        <div className={thumbnailHovered ? "info-card__container-visible" : "info-card__container-hidden"}>
-          <p className="description-text">{description}</p>
+          />
         </div>
       </div>
     </>

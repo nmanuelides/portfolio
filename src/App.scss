@@ -20,6 +20,11 @@
 }
 
 @font-face {
+  font-family: "TommyMedium";
+  src: url("./assets/TOMMYMedium.otf") format("truetype");
+}
+
+@font-face {
   font-family: "TommyRegular";
   src: url("./assets/TOMMYRegular.otf") format("truetype");
 }
@@ -39,7 +44,7 @@
 }
 
 body {
-  background: var(--darker-grape);
+  //background: var(--darker-grape);
 }
 .App {
   display: flex;
@@ -266,19 +271,6 @@ body {
   }
 }
 
-@keyframes thumbnailIn {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 @keyframes fadeToBlack {
   100% {
     z-index: 10000;
@@ -305,7 +297,7 @@ body {
   }
 }
 
-@keyframes s`wInfoCard {
+@keyframes swInfoCard {
   100% {
     height: 400px;
   }
