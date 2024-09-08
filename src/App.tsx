@@ -88,16 +88,6 @@ function App() {
 
   return (
     <div className="main__container">
-      {/*<div className="bgImage" />*/}
-      {/* <div className="overlays__container">
-        <div className="colorOverlay__top-1" />
-        <div className="colorOverlay__top-2" />
-      </div>
-      {/* <div className="backgrounds__container">
-        <div className="top__background"></div>
-        <div className="middle__background" />
-        <div className="bottom__background" />
-      </div> */}
       <div className="content__container">
         <div className="header__container">
           <div className="title">
@@ -162,6 +152,12 @@ function App() {
                 id="runbeat"
               />
             </div>
+          </div>
+        </div>
+        <div className="skills__container">
+          <p className="skills__title">My skill set</p>
+          <div className="skills__thumbnails-container">
+
           </div>
         </div>
       </div>

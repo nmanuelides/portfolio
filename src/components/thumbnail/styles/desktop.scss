@@ -88,8 +88,7 @@
         transform: translate(0, 300px);
         transition: all 0.6s ease;
         z-index: 100;
-       
-        
+
         &:hover {
           border: 1px solid var(--accent);
           filter: brightness(1.2);
@@ -138,7 +137,7 @@
   background-image: url("../../../assets/runbeat-thumbnail.png");
 }
 .thumbnail:hover {
-  box-shadow: 2px 2px 18px 10px rgba(0, 0, 0, 0.33);
+  box-shadow: 25px 25px 30px rgba(black, 0.3);
   opacity: 1;
   filter: saturate(1);
   transition: all 0.3s ease-in-out;

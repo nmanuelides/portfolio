@@ -13,77 +13,6 @@ $description-translate-amount: 80px;
   width: 100%;
   overflow-x: hidden;
   background: var(--tint-color);
-  .bgImage {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-image: url("./assets/plasterBg1s.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-    mix-blend-mode: multiply;
-    z-index: 1;
-  }
-  .overlays__container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    mix-blend-mode: multiply;
-    z-index: 2;
-    .colorOverlay__top-1,
-    .colorOverlay__top-2 {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .colorOverlay__top-1 {
-      mix-blend-mode: color;
-      z-index: 2;
-    }
-
-    .colorOverlay__top-2 {
-      mix-blend-mode: overlay;
-      background-color: var(--tint-color);
-      z-index: 3;
-    }
-  }
-  .backgrounds__container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
-    .top__background {
-      background: #ececec;
-      width: 100%;
-      height: 550px;
-      mix-blend-mode: multiply;
-    }
-
-    .middle__background {
-      background: #2b2b2b;
-      width: 100%;
-      height: 640px;
-      mix-blend-mode: multiply;
-    }
-
-    .bottom__background {
-      background: gray;
-      width: 100%;
-      height: 300px;
-      mix-blend-mode: multiply;
-    }
-  }
 
   .content__container {
     display: flex;
@@ -227,7 +156,7 @@ $description-translate-amount: 80px;
 
         .aboutMe__label {
           position: absolute;
-          top: -76px;
+          top: -96px;
           left: 0;
           border-radius: 10px;
           z-index: 3;
@@ -236,7 +165,7 @@ $description-translate-amount: 80px;
             margin: 0;
             font-family: "TommyLight";
             font-weight: 600;
-            font-size: 3.4em;
+            font-size: 4.4em;
             color: var(--secondary);
             // color: var(--accent-color);
           }
@@ -276,6 +205,7 @@ $description-translate-amount: 80px;
         font-family: "TOMMYLight";
         font-weight: 600;
         font-size: 4.4em;
+        box-sizing: border-box;
         color: white;
 
         &::before {
@@ -343,8 +273,7 @@ $description-translate-amount: 80px;
           .mtgpt-thumbnail__description {
             text-align: start;
             color: var(--secondary);
-            box-shadow:  25px 25px 50px #bcd2c1,
-             -25px -25px 50px #e6ffeb;
+            box-shadow: 25px 25px 50px #bcd2c1, -25px -25px 50px #e6ffeb;
             transition: all 0.5s ease-in-out;
             &:hover {
               box-shadow: 25px 25px 50px #e6ffeb, -25px -25px 50px #bcd2c1;
@@ -382,6 +311,47 @@ $description-translate-amount: 80px;
             }
           }
         }
+      }
+    }
+    .skills__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 1920px;
+      z-index: 2;
+
+      .skills__title {
+        display: flex;
+        position: relative;
+        justify-content: flex-start;
+        width: 100%;
+        margin: 0;
+        padding-left: 32px;
+        padding-top: 32px;
+        font-family: "TommyLight";
+        font-weight: 600;
+        font-size: 4.4em;
+        color: var(--secondary);
+        background: var(--white);
+        box-sizing: border-box;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          right: 112px;
+          width: 32px;
+          height: 32px;
+          border-radius: 16px;
+          background: var(--accent-color);
+          box-shadow: 48px 0em 0 var(--secondary),
+            96px 0em 0 var(--secondary-light);
+        }
+      }
+
+      .skills__thumbnails-container {
+        padding: 32px;
+        padding-bottom: 96px;
       }
     }
   }
