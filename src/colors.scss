@@ -1,39 +1,37 @@
-:root {
-  // --tint-color: #81c1da;
-  --tint-color: #02131a;
-  --secondary: #062735;
-  --accent-color: #ff4800;
-  ///////////////////////////
-  /// BRAUN
-  --tint-color: #e6d6b4;
-  --secondary: #554a3c;
-  --secondary-light: #9b8b76;
-  --accent-color: #ff5e00;
-  /// BRAUN 2
-  --tint-color: #d1e9d6;
-  --secondary: #31302e;
-  --secondary-light: #a2aca1;
-  --accent-color: #e54220;
-  --white: #e8ede3;
-  // --arrakis-sand: white;
-  // --darker-grape: #1d0007;
-  // --dark-grape: #4b000a;
-  // --light-grape: #ff9100;
-  // --space-marine-blue: #5f0030;
-  // --sun-light: #ffc08d;
-  // --peach: #ffe5ad;
-  // --accent: #b8005c;
+// --tint-color: #81c1da;
+// --tint-color: #02131a;
+// --secondary: #062735;
+// --accent-color: #ff4800;
+///////////////////////////
+/// BRAUN
+// --tint-color: #e6d6b4;
+// --secondary: #554a3c;
+// --secondary-light: #9b8b76;
+// --accent-color: #ff5e00;
+/// BRAUN 2
+$tint-color: #d1e9d6;
+$secondary: #31302e;
+$secondary-light: #a2aca1;
+$accent-color: #e54220;
+$white: #d5dfcc;
+// --arrakis-sand: white;
+// --darker-grape: #1d0007;
+// --dark-grape: #4b000a;
+// --light-grape: #ff9100;
+// --space-marine-blue: #5f0030;
+// --sun-light: #ffc08d;
+// --peach: #ffe5ad;
+// --accent: #b8005c;
 
-  //Aldi summer
-  // --arrakis-sand: white;
-  // --darker-grape: #01110a;
-  // --dark-grape: #073326;
-  // --light-grape: #031f16;
-  // --space-marine-blue: #339667;
-  // --sun-light: #031f16;
-  // --peach: #f5ac70;
-  // --accent: #45d391;
-}
+//Aldi summer
+// --arrakis-sand: white;
+// --darker-grape: #01110a;
+// --dark-grape: #073326;
+// --light-grape: #031f16;
+// --space-marine-blue: #339667;
+// --sun-light: #031f16;
+// --peach: #f5ac70;
+// --accent: #45d391;
 
 @media (max-width: 768px) {
   :root {

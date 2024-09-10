@@ -1,10 +1,13 @@
-// Function to apply opacity to a color
-$tint-color: #81c1da;
+@import "./colors.scss";
+// Custom variables;
 $thumbnail-size: 480px;
 $description-translate-amount: 80px;
+
+// Function to apply opacity to a color
 @function color-with-alpha($color, $alpha) {
   @return rgba(red($color), green($color), blue($color), $alpha);
 }
+
 .main__container {
   display: flex;
   flex-direction: column;
@@ -12,7 +15,7 @@ $description-translate-amount: 80px;
   align-items: center;
   width: 100%;
   overflow-x: hidden;
-  background: var(--tint-color);
+  background: $tint-color;
 
   .content__container {
     display: flex;
@@ -35,7 +38,7 @@ $description-translate-amount: 80px;
         font-family: "TommyBold";
         font-size: clamp(6em, 14.6vw, 18em);
         line-height: 0.8em;
-        color: var(--secondary);
+        color: $secondary;
         position: relative;
 
         &::before {
@@ -61,7 +64,7 @@ $description-translate-amount: 80px;
             color: transparent;
             background-image: linear-gradient(
               0deg,
-              var(--accent-color) 20%,
+              $accent-color 20%,
               rgb(255, 123, 0) 35%
             );
             background-clip: text;
@@ -70,7 +73,7 @@ $description-translate-amount: 80px;
             color: transparent;
             background-image: linear-gradient(
               0deg,
-              var(--accent-color) 5%,
+              $accent-color 5%,
               orange 65%
             );
             background-clip: text;
@@ -79,7 +82,7 @@ $description-translate-amount: 80px;
 
         &-char:hover {
           font-family: "TommyBold";
-          color: var(--accent-color);
+          color: $accent-color;
           animation: title-reveal 0.5s ease-in-out;
         }
       }
@@ -102,7 +105,7 @@ $description-translate-amount: 80px;
       align-items: center;
       align-self: center;
       margin-left: 0;
-      background: var(--tint-color);
+      background: $tint-color;
       height: 400px;
       position: relative;
 
@@ -127,14 +130,14 @@ $description-translate-amount: 80px;
         padding: 32px 48px;
         z-index: 2;
         backdrop-filter: blur(6px);
-        outline: 3px solid var(--secondary-light);
+        outline: 3px solid $secondary-light;
         transition: all 0.1s ease-in-out;
         box-sizing: border-box;
 
         &:hover {
           box-shadow: inset 0 3px 2px -2px white, inset 3px 0px 2px -2px white,
-            inset 0 -3px 2px -2px var(--secondary-light),
-            inset -3px 0 2px -2px var(--secondary-light),
+            inset 0 -3px 2px -2px $secondary-light,
+            inset -3px 0 2px -2px $secondary-light,
             8px 8px 10px 4px rgba(0, 0, 0, 0.25);
           outline: none;
           background: rgba(white, 0.1);
@@ -147,9 +150,9 @@ $description-translate-amount: 80px;
           letter-spacing: 0.04em;
           line-height: 1.2em;
           font-weight: 600;
-          color: var(--secondary);
+          color: $secondary;
           &::selection {
-            background-color: var(--accent-color);
+            background-color: $accent-color;
             color: white;
           }
         }
@@ -166,14 +169,14 @@ $description-translate-amount: 80px;
             font-family: "TommyLight";
             font-weight: 600;
             font-size: 4.4em;
-            color: var(--secondary);
-            // color: var(--accent-color);
+            color: $secondary;
+            // color: var(accent-color;
           }
           p::first-letter {
             color: transparent;
             background-image: linear-gradient(
               0deg,
-              var(--accent-color) 15%,
+              $accent-color 15%,
               rgb(255, 123, 0) 66%
             );
             background-clip: text;
@@ -196,7 +199,7 @@ $description-translate-amount: 80px;
         margin: 0;
         background: linear-gradient(
           0deg,
-          var(--accent-color) 40%,
+          $accent-color 40%,
           rgb(255, 94, 0) 100%
         );
         padding-right: 32px;
@@ -216,8 +219,8 @@ $description-translate-amount: 80px;
           width: 32px;
           height: 32px;
           border-radius: 16px;
-          background: var(--secondary-light);
-          box-shadow: 48px 0em 0 var(--tint-color), 96px 0em 0 white;
+          background: $secondary-light;
+          box-shadow: 48px 0em 0 $tint-color, 96px 0em 0 white;
         }
       }
 
@@ -232,7 +235,7 @@ $description-translate-amount: 80px;
           opacity: 0;
           background-image: linear-gradient(
             0deg,
-            var(--accent-color) 10%,
+            $accent-color 10%,
             rgb(255, 123, 0) 65%
           );
           background-clip: text;
@@ -263,16 +266,14 @@ $description-translate-amount: 80px;
         }
       }
       .mtgpt__container {
-        // background: var(--white);
-        // border-bottom: 4px solid var(--accent-color);
-        box-shadow: 0 8px 20px 1px rgba(black, 0.3);
+        // box-shadow: 0 8px 20px 1px rgba(black, 0.3);
         .mtgpt-thumbnail__title {
           margin-left: 32px;
         }
         .mtgpt-thumbnail__content {
           .mtgpt-thumbnail__description {
             text-align: start;
-            color: var(--secondary);
+            color: $secondary;
             box-shadow: 25px 25px 50px #bcd2c1, -25px -25px 50px #e6ffeb;
             transition: all 0.5s ease-in-out;
             &:hover {
@@ -286,9 +287,11 @@ $description-translate-amount: 80px;
         background: linear-gradient(
           0deg,
           red 0%,
-          var(--accent-color) 50%,
+          $accent-color 50%,
           rgb(255, 94, 0) 100%
         );
+        box-shadow: inset 0 -8px 20px 1px rgba(black, 0.3),
+          inset 0 8px 20px 1px rgba(black, 0.3);
         z-index: -1;
         .runbeat-thumbnail__title {
           text-align: end;
@@ -332,8 +335,8 @@ $description-translate-amount: 80px;
         font-family: "TommyLight";
         font-weight: 600;
         font-size: 4.4em;
-        color: var(--secondary);
-        background: var(--white);
+        color: $secondary;
+        background-image: linear-gradient(0deg, $white 15%, white 65%);
         box-sizing: border-box;
         &::before {
           content: "";
@@ -343,13 +346,15 @@ $description-translate-amount: 80px;
           width: 32px;
           height: 32px;
           border-radius: 16px;
-          background: var(--accent-color);
-          box-shadow: 48px 0em 0 var(--secondary),
-            96px 0em 0 var(--secondary-light);
+          background: $accent-color;
+          box-shadow: 48px 0em 0 $secondary, 96px 0em 0 $secondary-light;
         }
       }
 
       .skills__thumbnails-container {
+        display: flex;
+        justify-content: center;
+        width: 100%;
         padding: 32px;
         padding-bottom: 96px;
       }

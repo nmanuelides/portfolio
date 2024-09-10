@@ -157,7 +157,7 @@ function App() {
         <div className="skills__container">
           <p className="skills__title">My skill set</p>
           <div className="skills__thumbnails-container">
-
+            <LogoTilesContainer title="Knowledge" tiles={skills}/>
           </div>
         </div>
       </div>

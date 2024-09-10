@@ -76,7 +76,7 @@
         align-items: center;
         width: 96px;
         height: 96px;
-        background: var(--accent-color);
+        background: $accent-color;
         padding: 0;
         border: none;
         border-radius: 48px;
@@ -90,7 +90,7 @@
         z-index: 100;
 
         &:hover {
-          border: 1px solid var(--accent);
+          border: 1px solid $accent-color;
           filter: brightness(1.2);
           box-shadow: inset 1px 2px 2px -2px white,
             inset -2px -3px 2px -2px rgb(141, 23, 2),
@@ -99,7 +99,7 @@
         }
         &:active {
           filter: brightness(1);
-          background: var(--accent-color);
+          background: $accent-color;
           transform: translate(0, 300px);
           box-shadow: none;
           transition: all 0.2s ease-in-out;
@@ -123,6 +123,20 @@
           background-size: contain;
           background-repeat: no-repeat;
           animation: triangleGrowIn 0.4s ease-in-out forwards;
+          animation-delay: 0.2s;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          height: 12px;
+          width: 24px;
+          left: 16px;
+          bottom: 0px;
+          opacity: 0;
+          border-radius: 16px;
+          background: white;
+          border: solid 4px $accent-color;
+          animation: arrowIn 0.4s ease-in-out forwards;
           animation-delay: 0.2s;
         }
       }
@@ -162,6 +176,12 @@
   }
 }
 
+@keyframes arrowIn {
+  100% {
+    opacity: 1;
+    transform: translateY(-185%);
+  }
+}
 @keyframes triangleGrowIn {
   0% {
     opacity: 0;

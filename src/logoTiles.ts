@@ -5,15 +5,15 @@ import typescriptLogo from "./assets/ts-logo.svg";
 import agileLogo from "./assets/agile-logo.png";
 import androidLogo from "./assets/android-logo.png";
 import cssLogo from "./assets/css-logo.png";
-import figmaLogo from "./assets/figma-logo.webp";
+import figmaLogo from "./assets/figma-logo.png";
 import gitLogo from "./assets/git-logo.png";
 import graphqlLogo from "./assets/graphql-logo.png";
 import htmlLogo from "./assets/html-logo.png";
-import jestLogo from "./assets/jest-logo.webp";
+import jestLogo from "./assets/jest-logo.png";
 import photoshopLogo from "./assets/photoshop-logo.png";
 import reactjsLogo from "./assets/reactjs-logo.png";
 import sassLogo from "./assets/sass-logo.png";
-import storybookLogo from "./assets/storybook-logo.svg";
+import storybookLogo from "./assets/storybook-logo.png";
 import uiuxdesignLogo from "./assets/uiuxdesign-logo.jpg";
 
 export const languages: LogoTileProps[] = [
