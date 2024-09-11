@@ -79,6 +79,16 @@
             flex-direction: column-reverse;
             margin-top: 32px;
           }
+          .runbeat-thumbnail__content {
+            .runbeat-thumbnail__description {
+              box-shadow: 5px 5px 10px #790000,
+              -5px -5px 10px rgb(255, 126, 40);
+               &:hover {
+              box-shadow: 5px 5px 10px rgb(255, 126, 40),
+                -5px -5px 10px #790000;
+            }
+            }
+          }
         }
       }
       .skills__container {
