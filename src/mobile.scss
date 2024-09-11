@@ -1,146 +1,77 @@
 @import "./colors.scss";
 
-@media (max-height: 1200px) {
-  .App {
-    .content {
-      .App-header {
-        .header-subtitle {
-          span {
-            margin-top: -1.4rem;
+@media (max-width: 48rem) {
+  body .main__container {
+    .content__container {
+      .header__container {
+        // justify-content: flex-start;
+        height: 15vh;
+        .title {
+          margin-left: 8px;
+          font-size: clamp(1rem, 10vw + 2rem, 3.8rem);
+        }
+        .subtitle {
+          font-size: clamp(1.4rem, 5vw + 1rem, 2rem);
+        }
+      }
+      .aboutMe__container {
+        height: 65vh;
+        .aboutMe__text-container {
+          font-size: clamp(0.7rem, 1.5vw + 0.5rem, 0.9rem);
+          .aboutMe__label {
+            p {
+              font-size: clamp(1.4rem, 8vw + 1rem, 4rem);
+            }
           }
         }
       }
-    }
-  }
-}
-
-@media (max-width: 768px) {
-  #root {
-    overflow: visible;
-  }
-  .body-no-scroll {
-    overflow: hidden;
-  }
-  .App::after {
-    content: none;
-  }
-  .App::before {
-    filter: brightness(2.5);
-  }
-  .App {
-    width: 100svw;
-    height: 100svh;
-    overflow-x: hidden;
-    .App-header {
-      margin: 0;
-      margin-left: 16px;
-      font-size: 3.6rem;
-      line-height: 3rem;
-      .niki {
-        width: calc(30px + (8vh + 8vw));
-        height: auto;
-      }
-      .header-subtitle {
-        display: flex;
-        margin: 0;
-        margin-left: 2px;
-        &__manuelides {
-          font-size: 3.4rem;
-          font-family: "TommyBold";
-          color: var(--arrakis-sand);
-        }
-        &__portfolio {
-          font-size: 2rem;
-          line-height: 0.4rem;
-          align-self: flex-end;
-        }
-      }
-    }
-
-    .main-content {
-      flex-direction: column;
-      width: 100svw;
-      margin: 0;
-      margin-top: 32px;
-      padding: 0;
-      .left-column {
-        width: 100%;
-        height: 60svh;
-        align-items: center;
-        .about-container {
-          display: flex;
-          width: 90%;
-          margin: 0;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding: 8px;
-          &__title {
-            margin: 0;
-            font-size: 1.4rem;
-          }
-          &__text {
-            font-size: 1rem;
-            padding: 16px;
-            padding-top: 0;
+      .thumbnails__container {
+        .thumbnails__title {
+          font-size: clamp(2.8rem, 8vw + 0.6rem, 3.2rem);
+          padding: 16px 8px 4px 8px;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 40%;
+            left: 8px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: $accent-color;
+            box-shadow: 3px 3px 6px #c3381b, -3px -3px 6px #ff4c25;
           }
         }
-        .my-projects-title {
-          font-size: 1.4rem;
-          margin-top: 16px;
+        .thumbnail__container {
+          padding: 0;
+          padding-bottom: 48px;
+          .thumbnail__title {
+            margin: 32px;
+            font-size: clamp(0.5rem, 8vw + 0.4rem, 2.2rem);
+          }
+          .thumbnail__content {
+            flex-direction: column;
+            .thumbnail__description {
+              width: 90%;
+            }
+          }
         }
-        .thumbnails-container {
-          flex-direction: column;
-          grid-template-rows: 200px;
-          width: 94%;
-          margin: 0;
-          margin-bottom: 32px;
-          gap: 10px;
+        .mtgpt__container {
+        .mtgpt-thumbnail__title {
+          margin-left: 32px;
+        }
+        .mtgpt-thumbnail__content {
+          .mtgpt-thumbnail__description {
+            text-align: start;
+            color: $secondary;
+            box-shadow: 5px 5px 10px #bcd2c1, -5px -5px 10px #e6ffeb;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+              box-shadow: 5px 5px 10px #e6ffeb, -5px -5px 10px #bcd2c1;
+            }
+          }
         }
       }
-      .right-column {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        .skills-container {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 80svw;
-          margin: 0;
-          margin-bottom: 32px;
-          padding: 16px;
-        }
       }
     }
-  }
-
-  .thumbnail-title__hidden::after {
-    content: "";
-    width: 1px;
-    height: 18px;
-    background: var(--arrakis-sand);
-    position: absolute;
-    bottom: -85%;
-    left: 10%;
-  }
-}
-
-@keyframes moveIn {
-  100% {
-    opacity: 1;
-    bottom: 0;
-  }
-}
-@keyframes subtitleMoveIn {
-  0% {
-    opacity: 0;
-  }
-  70% {
-    opacity: 1;
-  }
-  100% {
-    left: 64%;
   }
 }

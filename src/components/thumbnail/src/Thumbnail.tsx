@@ -29,30 +29,9 @@ const Thumbnail = ({
     onThumbnailHovered();
   };
 
-  const shouldShowModal = () => {
-    return isMobile && thumbnailHovered;
-  };
-
   return (
     <>
-      {shouldShowModal() && (
-        <button
-          className="close-button"
-          onClick={() => {
-            setThumbnailHovered(false);
-          }}
-        >
-          x
-        </button>
-      )}
-      <div
-        id={id}
-        className={
-          thumbnailHovered && isMobile
-            ? "thumbnail-container big-mode"
-            : "thumbnail-container"
-        }
-      >
+      <div id={id} className={"thumbnail-container"}>
         <div
           className={`thumbnail ${"thumbnail-" + id}`}
           ref={thumbnailRef}
@@ -72,7 +51,7 @@ const Thumbnail = ({
           />
           <button
             className={
-              thumbnailHovered
+              thumbnailHovered || isMobile
                 ? "go-to-button__visible"
                 : "go-to-button__hidden"
             }

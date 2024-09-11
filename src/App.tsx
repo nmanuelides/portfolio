@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react";
-import "./App.scss";
-import "./mobile.scss";
 import "./main.scss";
+import "./mobile.scss";
 import {
   mtgPriceTutorDescription,
   runBeatDescription,
   aboutMyself,
 } from "./sitesDescriptions.js";
-import niki from "./assets/niki.png";
-import Spheres from "./components/spheres/src/Spheres";
 import LogoTilesContainer from "./components/logo-tiles-container/src/LogoTilesContainer";
-import { languages, skills } from "./logoTiles";
+import { skills } from "./logoTiles";
 import Thumbnail from "./components/thumbnail/src/Thumbnail";
 import mtgptThumbnailImage from "./assets/mtgpt-thumbnail.png";
 import runBeatThumbnailImage from "./assets/runbeat-thumbnail.png";
-import plasterBg1 from "./assets/plasterBg1s.jpg";
 import useIsScrolledIntoView from "./hooks/useIsScrolledIntoView";
 
 function App() {
@@ -104,7 +100,7 @@ function App() {
             <div className="aboutMe__label">
               <p>About Me.</p>
             </div>
-            <p>{aboutMyself}</p>
+            <p className="aboutMe__text">{aboutMyself}</p>
           </div>
         </div>
         <div className="thumbnails__container">
@@ -136,7 +132,7 @@ function App() {
               className="thumbnail__title runbeat-thumbnail__title"
               ref={runBeatThumbnailTitleRef}
             >
-              <span>(wip)  </span>RUNBEAT
+              <span>(wip) </span>RUNBEAT
             </p>
             <div className="thumbnail__content runbeat-thumbnail__content">
               <p
@@ -157,7 +153,7 @@ function App() {
         <div className="skills__container">
           <p className="skills__title">My skill set</p>
           <div className="skills__thumbnails-container">
-            <LogoTilesContainer title="Knowledge" tiles={skills}/>
+            <LogoTilesContainer title="Knowledge" tiles={skills} />
           </div>
         </div>
       </div>

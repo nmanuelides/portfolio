@@ -23,18 +23,21 @@ export const languages: LogoTileProps[] = [
 ];
 
 export const skills: LogoTileProps[] = [
-    { image: reactjsLogo, title: "React JS", size: "small" },
-    { image: htmlLogo, title: "HTML", size: "small" },
-    { image: cssLogo, title: "CSS", size: "small" },
-    { image: sassLogo, title: "Sass", size: "small" },
-    { image: storybookLogo, title: "Storybook", size: "small" },
-    { image: jestLogo, title: "Jest", size: "small" },
-    { image: figmaLogo, title: "Figma", size: "small" },
-    { image: gitLogo, title: "Git", size: "small" },
-    { image: androidLogo, title: "Android", size: "small" },
-    { image: graphqlLogo, title: "GraphQL", size: "small" },
-    { image: photoshopLogo, title: "Photoshop", size: "small" },
-    { image: uiuxdesignLogo, title: "UI/UX Design", size: "small" },
-    { image: agileLogo, title: "Agile Methdology", size: "small" }
+    { image: javaLogo, title: "Java", size: "medium" },
+    { image: javascriptLogo, title: "Javascript", size: "medium" },
+    { image: typescriptLogo, title: "Typescript", size: "medium" },
+    { image: reactjsLogo, title: "React JS", size: "medium" },
+    { image: htmlLogo, title: "HTML", size: "medium" },
+    { image: cssLogo, title: "CSS", size: "medium" },
+    { image: sassLogo, title: "Sass", size: "medium" },
+    { image: storybookLogo, title: "Storybook", size: "medium" },
+    { image: jestLogo, title: "Jest", size: "medium" },
+    { image: figmaLogo, title: "Figma", size: "medium" },
+    { image: gitLogo, title: "Git", size: "medium" },
+    { image: androidLogo, title: "Android", size: "medium" },
+    { image: graphqlLogo, title: "GraphQL", size: "medium" },
+    { image: photoshopLogo, title: "Photoshop", size: "medium" },
+    { image: uiuxdesignLogo, title: "UI/UX Design", size: "medium" },
+    { image: agileLogo, title: "Agile Methdology", size: "medium" }
   ];
   

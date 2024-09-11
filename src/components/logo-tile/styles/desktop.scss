@@ -10,16 +10,15 @@
   aspect-ratio: 1/1;
 
   &__image.medium {
-    width: 75%;
-    max-width: 80px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
-    box-shadow: 8px 8px 10px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 5px 5px 5px #bcd2c1, inset -5px -5px 5px #e6ffeb;
   }
 
   &__image.small {
     width: 80px;
     height: 80px;
-    // border: 8px solid $secondary;
     border-radius: 50%;
     box-shadow: inset 5px 5px 5px #bcd2c1, inset -5px -5px 5px #e6ffeb;
   }
@@ -28,7 +27,6 @@
     margin-top: 8px;
     font-family: "TommyLight";
     color: $secondary;
-    position: absolute;
   }
   &__title.small {
     margin-top: 8px;
