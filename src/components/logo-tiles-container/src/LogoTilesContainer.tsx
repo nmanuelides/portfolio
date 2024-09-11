@@ -90,6 +90,7 @@ const LogoTilesContainer = ({
           tiles.map((tile) => {
             return (
               <LogoTile
+                key={tile.title}
                 image={tile.image}
                 title={tile.title}
                 size={tile.size}

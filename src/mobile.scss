@@ -37,7 +37,7 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: $accent-color;
+            background: transparent;
             box-shadow: 3px 3px 6px #c3381b, -3px -3px 6px #ff4c25;
           }
         }
@@ -56,21 +56,48 @@
           }
         }
         .mtgpt__container {
-        .mtgpt-thumbnail__title {
-          margin-left: 32px;
-        }
-        .mtgpt-thumbnail__content {
-          .mtgpt-thumbnail__description {
-            text-align: start;
-            color: $secondary;
-            box-shadow: 5px 5px 10px #bcd2c1, -5px -5px 10px #e6ffeb;
-            transition: all 0.5s ease-in-out;
-            &:hover {
-              box-shadow: 5px 5px 10px #e6ffeb, -5px -5px 10px #bcd2c1;
+          .mtgpt-thumbnail__title {
+            margin-left: 32px;
+          }
+          .mtgpt-thumbnail__content {
+            .mtgpt-thumbnail__description {
+              text-align: start;
+              color: $secondary;
+              box-shadow: 5px 5px 10px #bcd2c1, -5px -5px 10px #e6ffeb;
+              transition: all 0.5s ease-in-out;
+              &:hover {
+                box-shadow: 5px 5px 10px #e6ffeb, -5px -5px 10px #bcd2c1;
+              }
             }
           }
         }
+        .thumbnail__container.runbeat__container {
+          display: flex;
+          flex-direction: column;
+          div#runbeat__content {
+            display: flex;
+            flex-direction: column-reverse;
+            margin-top: 32px;
+          }
+        }
       }
+      .skills__container {
+        .skills__title {
+          font-size: clamp(2.8rem, 8vw + 0.6rem, 3.2rem);
+          padding: 16px 8px 4px 8px;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 40%;
+            left: 90%;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: transparent;
+            box-shadow:  3px 3px 6px #b5bead,
+             -3px -3px 6px #f5ffeb;
+          }
+        }
       }
     }
   }

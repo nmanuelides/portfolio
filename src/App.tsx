@@ -9,8 +9,8 @@ import {
 import LogoTilesContainer from "./components/logo-tiles-container/src/LogoTilesContainer";
 import { skills } from "./logoTiles";
 import Thumbnail from "./components/thumbnail/src/Thumbnail";
-import mtgptThumbnailImage from "./assets/mtgpt-thumbnail.png";
-import runBeatThumbnailImage from "./assets/runbeat-thumbnail.png";
+import mtgptThumbnailImage from "./assets/mtgpt-thumbnail.jpg";
+import runBeatThumbnailImage from "./assets/runbeat-thumbnail.jpg";
 import useIsScrolledIntoView from "./hooks/useIsScrolledIntoView";
 
 function App() {
@@ -134,7 +134,7 @@ function App() {
             >
               <span>(wip) </span>RUNBEAT
             </p>
-            <div className="thumbnail__content runbeat-thumbnail__content">
+            <div id="runbeat__content" className="thumbnail__content runbeat-thumbnail__content">
               <p
                 className={`thumbnail__description ${runbeatThumbnailDescriptionClass}`}
                 ref={runBeatDescriptionRef}
