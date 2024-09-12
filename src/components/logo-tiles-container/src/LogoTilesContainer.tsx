@@ -96,7 +96,7 @@ const LogoTilesContainer = ({
     <div className="logo-tiles__container">
       {!isMobile && (
         <>
-          <div className="logo-tiles-decor__container">
+          <div className="logo-tiles-decor__container-left">
             <div className="decor" />
             <div className="decor" />
             <div className="decor" />
@@ -144,6 +144,17 @@ const LogoTilesContainer = ({
             );
           })}
       </div>
+      {!isMobile && (
+        <div className="logo-tiles-decor__container-right">
+          <div className="decor" />
+          <div className="decor" />
+          <div className="decor" />
+          <div className="decor" />
+          <div className="decor" />
+          <div className="decor" />
+          <div className="decor" />
+        </div>
+      )}
     </div>
   );
 };
