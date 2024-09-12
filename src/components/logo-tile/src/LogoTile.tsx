@@ -1,4 +1,5 @@
 import "../styles/desktop.scss";
+import "../styles/mobile.scss";
 
 export type LogoTileProps = {
   image: string;
@@ -9,7 +10,11 @@ export type LogoTileProps = {
 const LogoTile = ({ image, title, size }: LogoTileProps): JSX.Element => {
   return (
     <div className="logo-tile-container">
-      <img className={`logo-tile-container__image ${size}`} src={image} alt={title} />
+      <img
+        className={`logo-tile-container__image ${size}`}
+        src={image}
+        alt={title}
+      />
       <b className={`logo-tile-container__title ${size}`}>{title}</b>
     </div>
   );

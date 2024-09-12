@@ -2,7 +2,6 @@
 
 .logo-tiles {
   &__container {
-    // border: 2px solid cornflowerblue;
     display: flex;
     align-items: flex-start;
     height: auto;
@@ -13,7 +12,6 @@
     border-radius: 3px;
 
     .logo-tiles-decor__container {
-      // border: 2px solid orange;
       display: flex;
       flex-direction: column;
       width: 35%;
@@ -51,6 +49,7 @@
     }
 
     .knob {
+      border: none;
       position: absolute;
       top: 48px;
       left: 50%;
@@ -80,28 +79,9 @@
         height: 36px;
         background-image: radial-gradient(#e6e6e6 40%, transparent 50%);
         background-size: 12px 12px;
-        // border-radius: 50%;
         transform: translate(-50%, -50%);
-        // box-shadow: 5px 5px 10px #ac3218, -5px -5px 10px #ff5328;
       }
     }
-    // .knob::before {
-    //   content: "";
-    //   position: absolute;
-    //   top: 50%;
-    //   left: 50%;
-    //   width: 80px;
-    //   height: 80px;
-    //   border-radius: 50%;
-    //   background: linear-gradient(
-    //     135deg,
-    //     orange 0%,
-    //     $accent-color 50%,
-    //     rgb(139, 0, 0) 100%
-    //   );
-    //   transform: translate(-50%, -50%);
-    //   z-index: -1;
-    // }
   }
   &__skills {
     padding: 8px;

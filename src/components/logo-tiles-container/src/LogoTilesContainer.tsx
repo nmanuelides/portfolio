@@ -1,6 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import LogoTile, { LogoTileProps } from "../../logo-tile/src/LogoTile";
 import "../styles/desktop.scss";
+import "../styles/mobile.scss";
+import { useIsMobile } from "../../../hooks/useIsMobile";
+import useIsScrolledIntoView from "../../../hooks/useIsScrolledIntoView";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 type LogoTilesContainerProps = {
   title: string;
@@ -14,6 +20,9 @@ const LogoTilesContainer = ({
   const [knobPosition, setKnobPosition] = useState(0); // Knob's Y position
   const trackRef = useRef<HTMLDivElement | null>(null);
   const skillsRef = useRef<HTMLDivElement | null>(null);
+  const [vibrating, setVibrating] = useState(false);
+  const vibrationIntervalRef = useRef<number | null>(null);
+  let isMobile = useIsMobile();
 
   const handleDrag = (e: MouseEvent | TouchEvent) => {
     const trackBounds = trackRef.current!.getBoundingClientRect();
@@ -47,7 +56,7 @@ const LogoTilesContainer = ({
     );
   };
 
-  const handleTouchStart = (e: React.TouchEvent) => {
+  const handleClickStart = (e: React.TouchEvent) => {
     document.addEventListener("touchmove", handleDrag);
     document.addEventListener(
       "touchend",
@@ -63,27 +72,64 @@ const LogoTilesContainer = ({
       document.removeEventListener("touchmove", handleDrag);
     };
   }, []);
+  const vibrationPattern = [10, 80, 10, 80, 10, 400];
+  const startVibration = () => {
+    if (navigator.vibrate) {
+      setVibrating(true);
+      navigator.vibrate(vibrationPattern);
+      vibrationIntervalRef.current = window.setInterval(() => {
+        navigator.vibrate(vibrationPattern);
+      }, 1000); // Interval of 500ms
+    }
+  };
+
+  const stopVibration = () => {
+    if (vibrationIntervalRef.current) {
+      clearInterval(vibrationIntervalRef.current);
+      vibrationIntervalRef.current = null;
+      navigator.vibrate(0); // Stop vibration
+    }
+    setVibrating(false);
+  };
 
   return (
     <div className="logo-tiles__container">
-      <div className="logo-tiles-decor__container">
-        <div className="decor" />
-        <div className="decor" />
-        <div className="decor" />
-        <div className="decor" />
-        <div className="decor" />
-        <div className="decor" />
-        <div className="decor" />
-      </div>
-      <div className="logo-tiles-knob__container">
-        <div
+      {!isMobile && (
+        <>
+          <div className="logo-tiles-decor__container">
+            <div className="decor" />
+            <div className="decor" />
+            <div className="decor" />
+            <div className="decor" />
+            <div className="decor" />
+            <div className="decor" />
+            <div className="decor" />
+          </div>
+          <div className="logo-tiles-knob__container">
+            <button
+              className="knob"
+              style={{ top: `${knobPosition}px` }}
+              onMouseDown={handleMouseDown}
+              onTouchStart={isMobile ? startVibration : handleClickStart}
+              onTouchEnd={isMobile ? stopVibration : undefined}
+            >
+              {isMobile && (
+                <FontAwesomeIcon className="arrow-up" icon={faAngleUp} />
+              )}
+            </button>
+            <div className="track" ref={trackRef} />
+            {/*<button
           className="knob"
           style={{ top: `${knobPosition}px` }}
           onMouseDown={handleMouseDown}
-          onTouchStart={handleTouchStart}
-        />
-        <div className="track" ref={trackRef} />
-      </div>
+          onTouchStart={isMobile ? startVibration : handleClickStart}
+          onTouchEnd={isMobile ? stopVibration : undefined}
+        >
+          <FontAwesomeIcon className="arrow-up" icon={faAngleDown} />
+        </button>*/}
+          </div>
+        </>
+      )}
       <div className="logo-tiles__skills" ref={skillsRef}>
         {tiles &&
           tiles.length > 0 &&

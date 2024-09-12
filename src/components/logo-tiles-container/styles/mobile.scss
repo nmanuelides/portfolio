@@ -1,11 +1,62 @@
+@import "../../../colors.scss";
 @media (max-width: 768px) {
-  .skills-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80svw;
-    margin: 0;
-    margin-bottom: 32px;
-    padding: 16px;
+  body .logo-tiles {
+    &__container {
+      justify-content: space-between;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      .logo-tiles-decor__container {
+        .decor {
+          display: none;
+        }
+      }
+    }
+    &-knob__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      margin-right: 40px;
+      .track {
+        display: none;
+      }
+
+      .knob {
+        position: relative;
+        width: 80px;
+        height: 80px;
+        background: $accent-color;
+        box-shadow: 8px 8px 16px -4px #515f54,
+          inset 0 -3px 4px -1px rgb(158, 0, 0),
+          0 -10px 15px -1px rgb(255, 255, 255),
+          inset 0 3px 4px -1px rgb(255, 102, 0),
+          inset 0 0 5px 1px rgb(255, 170, 73),
+          inset 0 3px 4px -1px rgb(255, 102, 0);
+        .arrow-up {
+          width: 32px;
+          height: auto;
+          color: white;
+        }
+        &::before {
+          background-image: none;
+        }
+        &:active {
+          filter: blur(0.5px);
+          box-shadow: 6px 6px 25px -4px #6c7a6f,
+            inset 0 -8px 30px 1px rgb(255, 102, 0),
+            0 -10px 15px -1px rgb(255, 255, 255),
+            inset 0 8px 25px 0 rgb(139, 0, 0),
+            inset 0 0 10px 1px rgb(255, 102, 0);
+        }
+      }
+    }
+    &__skills {
+      margin-left: 0;
+      max-width: 90%;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+    &__skills::-webkit-scrollbar {
+    }
   }
 }

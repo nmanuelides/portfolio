@@ -1,0 +1,17 @@
+@import "../../../colors.scss";
+@media (max-width: 768px) {
+  body .logo-tile-container {
+    &__image.medium {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      box-shadow: inset 5px 5px 5px #bcd2c1, inset -5px -5px 5px #e6ffeb;
+    }
+
+    &__title.medium {
+      margin-top: 8px;
+      font-family: "TommyLight";
+      color: $secondary;
+    }
+  }
+}
