@@ -413,3 +413,24 @@ $description-translate-amount: 80px;
     transform: translateY(0%) scale(1);
   }
 }
+
+@media (min-width: 768px) and (max-width: 1440px) {
+  /* Your styles here */
+  body
+    .main__container
+    .content__container
+    .thumbnails__container
+    .runbeat__container
+    .thumbnail__content
+    .thumbnail__description,
+  body
+    .main__container
+    .content__container
+    .thumbnails__container
+    .mtgpt__container
+    .thumbnail__content
+    .thumbnail__description {
+      min-width: 30%;
+    font-size: calc(1vw + 0.5em);
+  }
+}

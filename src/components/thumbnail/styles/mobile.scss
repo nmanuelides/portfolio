@@ -68,6 +68,10 @@
           border: solid 2px $accent-color;
         }
       }
+      .thumbnail__image {
+        width: 100%;
+        height: auto;
+      }
     }
     .thumbnail-runbeat {
       margin-top: 32px;

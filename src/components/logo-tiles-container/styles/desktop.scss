@@ -13,7 +13,7 @@
     .logo-tiles-decor__container-left {
       display: flex;
       flex-direction: column;
-      width: 35%;
+      width: 25%;
 
       .decor {
         height: 32px;
@@ -28,7 +28,7 @@
       flex-direction: column;
       align-items: flex-end;
       flex: 1;
-      width: 35%;
+      width: 25%;
 
       .decor {
         height: 32px;
@@ -103,10 +103,10 @@
     border-radius: 24px;
     flex: 1;
     max-height: 400px;
-    max-width: 600px;
+    min-width: 400px;
     margin-left: 96px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     justify-content: center;
     user-select: none;
     overflow: auto;
@@ -115,6 +115,12 @@
     box-shadow: inset 6px 6px 12px #bcd2c1, inset -6px -6px 12px #e6ffeb;
   }
   &__skills::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1080px) {
+  body .logo-tiles__container .logo-tiles-decor__container-right {
     display: none;
   }
 }
