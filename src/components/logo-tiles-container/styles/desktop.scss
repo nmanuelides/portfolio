@@ -1,5 +1,5 @@
 @import "../../../colors.scss";
-
+$skills-column-width: 140px;
 .logo-tiles {
   &__container {
     display: flex;
@@ -98,15 +98,15 @@
     }
   }
   &__skills {
-    padding: 8px;
-    padding-bottom: 16px;
+    padding: 32px;
     border-radius: 24px;
     flex: 1;
     max-height: 400px;
     min-width: 400px;
     margin-left: 96px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax($skills-column-width, 1fr));
+    max-width: calc(3 * $skills-column-width);
     justify-content: center;
     user-select: none;
     overflow: auto;
