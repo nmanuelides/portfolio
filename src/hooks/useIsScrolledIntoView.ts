@@ -1,11 +1,15 @@
 import { useEffect, useRef } from 'react';
 
-const useIsScrolledIntoView = (selector: string, className: string, threshold: number) => {
+const useIsScrolledIntoView = (selector: string | string[], className: string, threshold: number) => {
   const elementRef = useRef(null);
 
   useEffect(() => {
-    const element = document.querySelector(selector); 
-    if (!element) return;
+    const selectors = Array.isArray(selector) ? selector : [selector];
+    const elements = selectors
+      .map(s => document.querySelector(s))
+      .filter((el): el is Element => el !== null);
+
+    if (elements.length === 0) return;
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -17,17 +21,13 @@ const useIsScrolledIntoView = (selector: string, className: string, threshold: n
       threshold: threshold // Adjust as needed
     });
 
-    if (element) {
-      observer.observe(element);
-    }
+    elements.forEach(element => observer.observe(element));
 
     // Cleanup observer on unmount
     return () => {
-      if (element) {
-        observer.unobserve(element);
-      }
+      elements.forEach(element => observer.unobserve(element));
     };
-  }, [selector, className]);
+  }, [selector, className, threshold]);
 
   return elementRef;
 };

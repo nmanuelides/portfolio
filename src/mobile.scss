@@ -96,6 +96,15 @@
             }
           }
         }
+        .generic-project__container {
+          .generic-project__description {
+            width: 90%;
+            max-width: none;
+          }
+        }
+      }
+      #centread .thumbnail {
+        height: 380px;
       }
       .skills__container {
         .skills__title {

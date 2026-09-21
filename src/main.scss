@@ -341,6 +341,56 @@ $description-translate-amount: 80px;
           }
         }
       }
+
+      .generic-project__container {
+        width: 100%;
+        box-sizing: border-box;
+        .generic-project__title {
+          margin-left: 32px;
+        }
+        .generic-project__content {
+          .generic-project__description {
+            text-align: start;
+            color: var(--proj-text, #{$secondary});
+            width: 800px;
+            max-width: 800px;
+            flex: none;
+            box-shadow: 25px 25px 50px var(--proj-shadow-a, #bcd2c1),
+              -25px -25px 50px var(--proj-shadow-b, #e6ffeb);
+            transition: all 0.5s ease-in-out;
+            &:hover {
+              box-shadow: 25px 25px 50px var(--proj-shadow-b, #e6ffeb),
+                -25px -25px 50px var(--proj-shadow-a, #bcd2c1);
+            }
+          }
+        }
+        &.generic-project__container--alt {
+          background: var(--proj-bg, none);
+          box-shadow: inset 0 -8px 20px 1px rgba(black, 0.3),
+            inset 0 8px 20px 1px rgba(black, 0.3);
+          .generic-project__title {
+            margin-left: 0;
+            margin-right: 32px;
+            text-align: end;
+            color: white;
+          }
+          .generic-project__content {
+            .generic-project__description {
+              text-align: end;
+              color: white;
+            }
+          }
+        }
+        &.generic-project__container--portrait {
+          .generic-project__content {
+            .generic-project__description {
+              width: auto;
+              max-width: none;
+              flex: 1 1 auto;
+            }
+          }
+        }
+      }
     }
     .skills__container {
       display: flex;
@@ -385,6 +435,18 @@ $description-translate-amount: 80px;
         padding-bottom: 96px;
       }
     }
+  }
+}
+
+#centread .thumbnail {
+  width: auto;
+  aspect-ratio: 591 / 1280;
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+  .generic-project__container .generic-project__description {
+    width: 600px;
+    max-width: 600px;
   }
 }
 

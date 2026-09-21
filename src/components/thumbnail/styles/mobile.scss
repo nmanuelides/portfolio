@@ -83,3 +83,30 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .thumbnail-lightbox {
+    &__image-stack {
+      width: 94vw;
+      height: 78vh;
+    }
+    &__close {
+      top: 12px;
+      right: 12px;
+      width: 40px;
+      height: 40px;
+      font-size: 1.6rem;
+    }
+    &__nav {
+      width: 40px;
+      height: 40px;
+      font-size: 1.8rem;
+      &--prev {
+        left: 8px;
+      }
+      &--next {
+        right: 8px;
+      }
+    }
+  }
+}
