@@ -356,7 +356,7 @@ $description-translate-amount: 80px;
             min-width: 0;
           }
           .thumbnail {
-            max-width: 100%;
+            max-width: calc(100% - 32px);
           }
           .generic-project__description {
             text-align: start;
@@ -393,6 +393,14 @@ $description-translate-amount: 80px;
         }
         &.generic-project__container--portrait {
           .generic-project__content {
+            .thumbnail-container {
+              flex: 0 1 auto;
+              max-width: none;
+              min-width: auto;
+            }
+            .thumbnail {
+              max-width: none;
+            }
             .generic-project__description {
               width: auto;
               max-width: none;
