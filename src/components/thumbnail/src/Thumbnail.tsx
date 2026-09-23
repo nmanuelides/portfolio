@@ -1,4 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { useIsMobile } from "../../../hooks/useIsMobile";
 import useIsScrolledIntoView from "../../../hooks/useIsScrolledIntoView";
 import "../styles/desktop.scss";
@@ -32,6 +33,8 @@ const Thumbnail = ({
 }: ThumbnailProps) => {
   const [thumbnailHovered, setThumbnailHovered] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState<number | null>(null);
+  const prevActiveRef = useRef(activeIndex);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxVisible, setLightboxVisible] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -91,6 +94,19 @@ const Thumbnail = ({
 
     return () => clearInterval(interval);
   }, [isMobile, thumbnailHovered, images.length]);
+
+  // Keep the outgoing image visible (instead of fading it out) so only the
+  // incoming image visibly fades in, layered on top of it.
+  useEffect(() => {
+    setPrevIndex(prevActiveRef.current);
+    prevActiveRef.current = activeIndex;
+  }, [activeIndex]);
+
+  const handleActiveImageFadeEnd = (
+    event: React.TransitionEvent<HTMLImageElement>
+  ) => {
+    if (event.propertyName === "opacity") setPrevIndex(null);
+  };
 
   useEffect(() => {
     if (!lightboxOpen) return;
@@ -175,8 +191,15 @@ const Thumbnail = ({
               <img
                 key={image}
                 className={`thumbnail__image ${
-                  index === activeIndex ? "thumbnail__image--active" : ""
+                  index === activeIndex
+                    ? "thumbnail__image--active"
+                    : index === prevIndex
+                    ? "thumbnail__image--prev"
+                    : ""
                 }`}
+                onTransitionEnd={
+                  index === activeIndex ? handleActiveImageFadeEnd : undefined
+                }
                 src={image}
                 alt="website screenshot"
               />
@@ -194,62 +217,65 @@ const Thumbnail = ({
           )}
         </div>
       </div>
-      {isGallery && lightboxOpen && (
-        <div
-          className={`thumbnail-lightbox ${
-            lightboxVisible ? "thumbnail-lightbox--visible" : ""
-          }`}
-          onClick={closeLightbox}
-        >
-          <button
-            className="thumbnail-lightbox__close"
-            onClick={closeLightbox}
-            aria-label="Close"
-          >
-            ×
-          </button>
-          <button
-            className="thumbnail-lightbox__nav thumbnail-lightbox__nav--prev"
-            onClick={event => {
-              event.stopPropagation();
-              showPrevImage();
-            }}
-            aria-label="Previous image"
-          >
-            ‹
-          </button>
-          <div className="thumbnail-lightbox__image-stack" ref={imageStackRef} onClick={event => event.stopPropagation()}>
-            {images.map((image, index) => (
-              <img
-                key={image}
-                className={`thumbnail-lightbox__image ${
-                  index === lightboxIndex
-                    ? "thumbnail-lightbox__image--active"
-                    : ""
-                }`}
-                src={image}
-                alt="website screenshot enlarged"
-              />
-            ))}
-          </div>
-          <button
-            className="thumbnail-lightbox__nav thumbnail-lightbox__nav--next"
-            onClick={event => {
-              event.stopPropagation();
-              showNextImage();
-            }}
-            aria-label="Next image"
-          >
-            ›
-          </button>
+      {isGallery &&
+        lightboxOpen &&
+        createPortal(
           <div
-            className="thumbnail-lightbox__counter"
-            onClick={event => event.stopPropagation()}
+            className={`thumbnail-lightbox ${
+              lightboxVisible ? "thumbnail-lightbox--visible" : ""
+            }`}
+            onClick={closeLightbox}
           >
-            {lightboxIndex + 1} / {images.length}
-          </div>
-        </div>
-      )}
+            <button
+              className="thumbnail-lightbox__close"
+              onClick={closeLightbox}
+              aria-label="Close"
+            >
+              ×
+            </button>
+            <button
+              className="thumbnail-lightbox__nav thumbnail-lightbox__nav--prev"
+              onClick={event => {
+                event.stopPropagation();
+                showPrevImage();
+              }}
+              aria-label="Previous image"
+            >
+              ‹
+            </button>
+            <div className="thumbnail-lightbox__image-stack" ref={imageStackRef} onClick={event => event.stopPropagation()}>
+              {images.map((image, index) => (
+                <img
+                  key={image}
+                  className={`thumbnail-lightbox__image ${
+                    index === lightboxIndex
+                      ? "thumbnail-lightbox__image--active"
+                      : ""
+                  }`}
+                  src={image}
+                  alt="website screenshot enlarged"
+                />
+              ))}
+            </div>
+            <button
+              className="thumbnail-lightbox__nav thumbnail-lightbox__nav--next"
+              onClick={event => {
+                event.stopPropagation();
+                showNextImage();
+              }}
+              aria-label="Next image"
+            >
+              ›
+            </button>
+            <div
+              className="thumbnail-lightbox__counter"
+              onClick={event => event.stopPropagation()}
+            >
+              {lightboxIndex + 1} / {images.length}
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 };
